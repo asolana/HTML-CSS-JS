@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular puntuacion</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		*{margin:0;padding:0;}
+		body{width: 100vw;}
+		header,main{
+			width: 50%;
+			margin: auto;
+			padding: 1.5vw;
+			border: 1px solid #000;
+		}
+		header{
+			text-align: center;
+		}
+		main{
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+			grid-gap: 10px;
+			justify-content: space-around;
+		}
+		button{
+			grid-column: 2/4;
+			border-radius: 10px;
+		}
+		label{
+			text-align: left;
+		}
+		main>:nth-child(even){
+			background-color: #9A9A9A;
+			border-radius: 10px;
+			padding: 0.1vw 1vw;
+		}
+
+	</style>
+	<script>
+		function calcular () {
+			//tomar las notas de los inputs
+			var teoria = parseFloat(inteoria.value);
+			var practica = parseFloat(inpractica.value);
+
+			//calcular la nota
+			var nota = teoria*0.3+practica*0.7;
+
+			//bifurcación simple: si hay punto extra
+			if(inextra.checked){
+				nota++;
+			}
+
+			//otra bifurcación simple: si nota es > 10
+			if(nota>10){
+				nota=10;
+			}
+
+			outresultado.innerHTML = nota;
+
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora de notas finales</h1>
+	</header>
+	<main>
+		<label for="inteoria">Teoria: </label>
+		<input type="text" id="inteoria" />
+		<label for="inpractica">Practica:</label>
+		<input type="text" id="inpractica">
+		<label for="inextra">Punto extra:</label>
+		<input type="checkbox" id="inextra" />
+		<label for="outresultado">Nota Final:</label>
+		<output id="outresultado"></output>
+		<button onclick="calcular();">Calcular</button>
+	</main>
+</body>
+</html>

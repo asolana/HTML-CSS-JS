@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Ejercicios cortos</title>
+	<script src="js.js"></script>
+</head>
+<body>
+	<h1>Ejercicios Cortos</h1>
+	<h3>Ejercicio 1: Minimo</h3>
+	Numero 1: <input type="text" id="num1" />
+	Numero 2: <input type="text" id="num2" />
+	<button onclick="alert(minimo(num1.value,num2.value));">Minimo</button>
+	<hr />
+	<h3>Ejercicio 2</h3>
+	<h4>Area del Triangulo(base, altura)</h4>
+	Base: <input type="text" id="baset" />
+	Altura: <input type="text" id="altt" />
+	<button onclick="alert(areaTriangulo(baset.value,altt.value));">Calcular area</button>
+	<h4>Area del Rectangulo(base, altura)</h4>
+	Base: <input type="text" id="baser" />
+	Altura: <input type="text" id="altr" />
+	<button onclick="alert(areaRectangulo(baser.value,altr.value));">Calcular area</button>
+	<h4>Area del Circulo(radio)</h4>
+	Radio: <input type="text" id="rad" />
+	<button onclick="alert(areaCirculo(rad.value));">Calcular area</button>
+	<hr />
+	<h3>Ejercicio 3: Descuento</h3>
+	Precio: <input type="text" id="precio" />
+	Descuento: <input type="text" id="desc" />
+	<button onclick="alert(descuento(precio.value,desc.value));">Precio con descuento</button>
+	<hr />
+	<h3>Ejercicio 4: Hipotenusa</h3>
+	Cateto 1: <input type="text" id="ca1" />
+	Cateto 2: <input type="text" id="ca2" />
+	<button onclick="alert(hipotenusa(ca1.value,ca2.value));">Hipotenusa</button>
+	<hr />
+	<h3>Ejercicio 5: Numero primo</h3>
+	Numero: <input type="text" id="nn" />
+	<button onclick="alert(esPrimo(nn.value));">Es Primo?</button>
+	<hr />
+</body>
+</html>

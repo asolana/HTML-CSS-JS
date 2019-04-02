@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calcular puntuacion</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		*{margin:0;padding:0;}
+		body{width: 100vw;}
+		header,main{
+			width: 50%;
+			margin: auto;
+			padding: 1.5vw;
+			border: 1px solid #000;
+		}
+		header{
+			text-align: center;
+		}
+		main{
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-gap: 10px;
+			justify-content: space-around;
+		}
+		button{
+			border-radius: 10px;
+
+			grid-column: 1/3;
+		}
+		output{
+			text-shadow: 1px 1px 1px #000;
+		}
+
+	</style>
+	<script>
+		function calcular () {
+			//tomar datos
+			var nota = parseInt(innota.value);
+			var notaTexto = '';
+
+			// switch(nota){//calcular la nota
+			// 	case 0:
+			// 	case 1:
+			// 	case 2: notaTexto = "Deficiente"; break;
+			// 	case 3:
+			// 	case 4: notaTexto = "Suspenso"; break;
+			// 	case 5:
+			// 	case 6: notaTexto = "Aprobado"; break;
+			// 	case 7:
+			// 	case 8: notaTexto = "Notable"; break;
+			// 	case 9:
+			// 	case 10: notaTexto = "Excelente"; break;
+			// 	default: notaTexto = "Error en la nota";
+			// }
+
+			switch(nota){//calcular la nota
+				case 0:
+				case 1:
+				case 2: 
+					notaTexto = "Deficiente";
+					outnota.style.color = "#f00";
+					break;
+				case 3:
+				case 4: notaTexto = "Suspenso";
+					outnota.style.color = "#f00";
+					break;
+				case 5:
+				case 6: notaTexto = "Aprobado";
+					outnota.style.color = "#FF9600";
+					break;
+				case 7:
+				case 8: notaTexto = "Notable";
+					outnota.style.color = "#C0FF00";
+					break;
+				case 9:
+				case 10: notaTexto = "Excelente";
+					outnota.style.color = "#00FF00";
+					break;
+				default: notaTexto = "Error en la nota";
+			}
+
+			outnota.innerHTML = notaTexto;
+
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora de notas finales</h1>
+	</header>
+	<main>
+		<label for="innota">Nota: </label>
+		<input type="text" id="innota" />
+		<label for="outnota">Nota Final:</label>
+		<output id="outnota"></output>
+		<button onclick="calcular();">Calcular</button>
+	</main>
+</body>
+</html>

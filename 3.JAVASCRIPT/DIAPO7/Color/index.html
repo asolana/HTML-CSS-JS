@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Color</title>
+	<style>
+		body{
+			margin: auto;
+			width: 80%;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script>
+		function colorea (targ, col) {
+			targ.style.backgroundColor = col;
+			if(targ == document.body){
+				if(col <= "#cccccc"){
+					document.body.style.color = "#fff";
+				}else{
+					document.body.style.color = "#000";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Colorea</h1>
+	<p>Selecciona un color y haz click en los div</p>
+	<span>Color:</span>
+	<input type="color" id="incolor" value="#ff0000" />
+
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+	<div onclick="colorea(this, incolor.value);"></div>
+	<button onclick="colorea(document.body, incolor.value);">Colorear body</button>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<button onclick="clearInterval(tim);">Stop publi</button>
+<script>
+  var tim = setInterval(function () {
+    abrir();
+  }, 15000);
+
+  function abrir(){
+    var win = open('http://www.creacionesabm.com/img/creacionesabm.png','win','width = 300, height = 300, resizable = no, status = no, titlebar = no, toolbar = no, menubar = no');
+  }
+</script>
+<body>
+</body>
+</html>

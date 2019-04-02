@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>El juego de las luces</title>
+	<style>
+		*{
+			text-align: center;
+		}
+		main{
+			display: grid;
+			grid-template-columns: repeat(5,auto);
+			justify-content: center;
+			grid-gap: 5px;
+			margin: 15px 0;
+		}
+		div{
+			width: 75px;
+			height: 75px;
+			border: 1px solid #000;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>El juego de las luces</h1>
+	</header>
+	<hr />
+	Puntos: <output id='puntosOut'></output> - Intentos restantes: <output id='intentosOut'></output>
+	<main>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</main>
+	<button onclick="reset()">Reset</button>
+<script>
+	var puntos = 1000;
+	var intentos = 0;
+	var tablero = [[0,0,0,0,0],
+				   [0,0,0,0,0],
+				   [0,0,0,0,0],
+				   [0,0,0,0,0],
+				   [0,0,0,0,0]];
+	reset();
+	// cambiar(document.getElementById('0,1').id);
+	function initalize(){
+		var divI = 0;
+		for(let i = 0;i < tablero.length;i++){
+			for(let i2 = 0;i2 < tablero[i].length;i2++){
+				//se le da el Id a cada div, segun la posicion en la tabla
+				document.getElementsByTagName('div')[divI].id = i+','+i2;
+				divI++;
+				document.getElementById(i+','+i2).onclick = function() {swap(i,i2);};
+				//valor aleatorio para la casilla encendido o apagado
+				tablero[i][i2] = Math.round(Math.random());
+				//pintar los las casillas que son 0
+				if(tablero[i][i2] == 0){
+						document.getElementById(i+','+i2).style.backgroundColor = '#000';
+				}
+
+			}
+		}
+		intentos = 0;
+		puntos = 1000;
+	}
+	function paint () {
+		//Pintar puntuacion e intentos
+		puntosOut.innerHTML = puntos;
+		intentosOut.innerHTML = intentos;
+		for(let i = 0;i < tablero.length;i++){
+			for(let i2 = 0;i2 < tablero[i].length;i2++){
+				//pintar los las casillas que son 0 de negro y las que son 1 de blanco
+				if(tablero[i][i2] == 0){
+					document.getElementById(i+','+i2).style.backgroundColor = '#000';
+				}else{
+					document.getElementById(i+','+i2).style.backgroundColor = '#fff';
+				}
+			}
+		}
+
+	}
+
+	function swap (ind, ind2){
+		//variables de underlimit y limit
+		var uli = ind-1,
+			uli2 = ind2-1,
+			li = ind+1,
+			li2 = ind2+1;
+
+		switch (ind) {
+			case 0:
+				uli = 0;
+				break;
+			case tablero.length - 1:
+				li = tablero.length - 1;
+				break;
+			default:
+				break;
+		}
+		switch (ind2) {
+			case 0:
+				uli2 = 0;
+				break;
+			case tablero[ind].length - 1:
+				li2 = tablero[ind].length - 1;
+				break;
+			default:
+				break;
+		}
+		//Cambiar todos los contiguos
+		for(let i = uli;i<=li;i++){
+			if(tablero[i][ind2] == 1){
+				tablero[i][ind2] = 0;
+			}else{
+				tablero[i][ind2] = 1;
+			}
+		}
+
+		for(let i2 = uli2;i2<=li2;i2++){
+			if(i2 != ind2){
+				if(tablero[ind][i2] == 1){
+					tablero[ind][i2] = 0;
+				}else{
+					tablero[ind][i2] = 1;
+				}
+			}
+			
+		}
+		calcPoint();
+		paint();
+	}
+
+	function calcPoint(){
+		intentos++;
+		puntos -= 10;
+		if(puntos <= 0){
+			alert('Has Perdido!');
+			reset();
+		}
+		if(tablero.flat().indexOf(0) == -1){
+			alert('Has Ganado!');
+			reset();
+		}
+
+	}
+
+	function reset(){
+		initalize();
+		paint();
+
+	}
+	// window.location = 'http://juegos.superjocs.com/juego/reverse/';
+</script>
+</body>
+</html>

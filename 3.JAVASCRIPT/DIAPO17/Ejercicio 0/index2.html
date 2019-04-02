@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trickier nesting, still</title>
+		<script src='analizador.js'></script>
+		<script>
+			window.onload=function(){mostrar(document);};
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<table>
+					<tr>
+						<th>Steps</th>
+						<th>Process</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Figure out the<em>root element</em>.</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Deal with the<span>head</span>first, as it's usually easy.</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Work through the<span>body</span>.Just<em>take your time</em>.</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				This link is<em>not</em>active, but if it were, the answers to this<a><img/></a>would be there. But<em>do the exercise anyway!</em>
+			</div>
+		</div>
+	</body>
+</html>

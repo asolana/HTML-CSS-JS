@@ -1,0 +1,17 @@
+main>figure{
+	border: 3px groove #000;
+	border-radius: 5px;
+	filter: drop-shadow(0px 5px 2px #000);
+}
+main>figure:hover{
+	filter: drop-shadow(0px 10px 5px #000);
+}
+main>figure>img{
+	width: 100%;
+}
+main>figure figcaption{
+	margin: 10px;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}

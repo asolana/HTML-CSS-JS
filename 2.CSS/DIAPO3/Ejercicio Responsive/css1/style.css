@@ -1,0 +1,19 @@
+#wrap{
+	width: 90vw;
+	margin: auto;
+	text-align: center;
+	border: 1px solid #000;
+}
+header,nav,main,footer{
+	border: 1px solid #000;
+	margin: 2vw;
+}
+header{
+	padding: 10vw;
+}
+nav, footer{
+	padding: 5vw;
+}
+main{
+	padding: 30vw 10vw;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>COLOR2</title>
+	<script type="text/javascript">
+		function mostrar(color) {
+			res.style.backgroundColor = color; //cambia el color del fiv con id = 'res'
+			hex.innerHTML = color; //escribe el color en el div con id = 'hex'
+
+			var r = color.substr(1,2); //toma los dos dígitos del canal Rojo
+			var g = color.substr(3,2); //toma los dos dígitos del canal Verde
+			var b = color.substr(5,2); //toma los dos dígitos del canal Azul
+
+
+			//calcula los valores en decimal y genera el texto que se muestra en el div id='rgb'
+			rgb.innerHTML = 'rgb('+parseInt(r,16)+','+parseInt(g,16)+','+parseInt(b,16)+')';
+
+		}
+
+		function pickColor(rng,lbl) {
+			 p = document.getElementsByName("rangepicker");
+			alert(p);
+			//Get Red Green and Blue
+			var r;
+			var g;
+			var b;
+			switch(lbl){
+				case lred:
+					r = parseToHex(rng.value);//Valor Seleccionado
+					g = hex.innerHTML.substr(3,2);
+					b = hex.innerHTML.substr(5,2);
+					break;
+				case lgreen:
+					r = hex.innerHTML.substr(1,2);
+					g = parseToHex(rng.value);//Valor Seleccionado
+					b = hex.innerHTML.substr(5,2);
+					break;
+				case lblue:
+					r = hex.innerHTML.substr(1,2);
+					g = hex.innerHTML.substr(3,2);
+					b = parseToHex(rng.value);//Valor Seleccionado
+					break;
+			}
+			lbl.innerHTML = rng.value;
+			hex.innerHTML = '#' + r + g +  b;
+			res.style.backgroundColor = hex.innerHTML;
+
+		}
+
+		function parseToHex(val){
+			var val = parseInt(val).toString(16);
+			if(val.length %2){
+				val = '0' + val;
+			}
+			return val;
+		}
+	</script>
+	<style>
+		body{
+			width: 100%;
+			margin: auto;
+			text-align: center;
+		}
+		#res{
+			height: 90px;
+			width: 90px;
+			border: solid 1px #000;
+			margin: auto;
+		}
+		[type="range"]{
+			vertical-align: middle;
+			padding: 10px ;
+		}
+
+	</style>
+</head>
+<body>
+	<main>
+		<input type="color" name="color" onchange="mostrar(this.value);">
+		<div id="res"></div>
+		<div id="hex">#FFFFFF</div>
+		<div id="rgb">rgb(255,255,255)</div>
+		<form>
+			<label>RED:</label>
+			<input type="range" name="rangepicker" min="0" max="255" value="255" ondrag="pickColor(this,lred);"><label id="lred">255</label><br />
+			<label>GREEN:</label>
+			<input type="range" name="rangepicker" min="0" max="255" value="255" onchange="pickColor(this,lgreen);"><label id="lgreen">255</label><br />
+			<label>BLUE:</label>
+			<input type="range" name="rangepicker" min="0" max="255" value="255" onchange="pickColor(this,lblue);"><label id="lblue">255</label><br />
+		</form>	
+	</main>
+</body>
+
+</html>

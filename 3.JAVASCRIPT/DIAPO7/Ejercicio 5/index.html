@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<title>Ejercicio 5</title>
+</head>
+<body>
+	<h1>Galeria de imagenes</h1>
+	<div>
+		<figure><img src="./img/willsmith.jpg" height="200" width="200"></figure>
+		<figure><img src="./img/eddiemurphy.jpg" height="200" width="200"></figure>
+		<figure><img src="./img/dicaprio.jpg" height="200" width="200"></figure>
+		<figure><img src="./img/morganfreeman.jpg" height="200" width="200"></figure>
+		<figure><img src="./img/samuelljacson.jpg" height="200" width="200"></figure>
+	</div>
+	<br />
+	<hr />
+	<br />
+	Color del Borde:<input type="color" id="col" />
+	<script>
+		for (it in document.getElementsByTagName('div')[0].children) {
+			if(document.getElementsByTagName('div')[0].children[it].nodeName == "FIGURE"){
+				//Escalar Grande
+				document.getElementsByTagName('div')[0].children[it].firstElementChild.addEventListener('mouseenter', function(e){escalar(this,e)});
+				//Escalar Pequeño
+				document.getElementsByTagName('div')[0].children[it].firstElementChild.addEventListener('mouseleave', function(e){escalar(this,e)});
+				//Cambiar Color
+				document.getElementsByTagName('div')[0].children[it].firstElementChild.addEventListener('click', function(e){colorear(this,col.value)});
+			}
+		}
+		function escalar (yo,e) {
+			switch (e.type) {
+				case "mouseenter":
+					yo.width *= 1.3;
+					yo.height *= 1.3;
+					break;
+				case "mouseleave":
+					yo.width *= 0.769;
+					yo.height *= 0.769;
+					break;
+				default:
+					break;
+			}
+		}
+		function colorear (yo, col) {
+			if(yo.style.borderWidth == '1px'){
+				yo.style.borderWidth = "0";
+			}else{
+				yo.style.border = "1px solid "+ col;
+			}
+		}
+	</script>
+</body>
+</html>

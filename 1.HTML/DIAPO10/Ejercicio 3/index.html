@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<title>Ejercicio 1</title>
+	<style>
+		main{
+			display: inline-block;
+			margin: auto;
+			padding: 5px;
+			border: 1px solid #0078d7; 
+			text-align: left;
+		}
+		label{
+			margin: 5px;
+			display: inline-block;
+		}
+		#short{
+			width: 40px;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<main>
+		<h1>Formulario de Registro</h1>
+		<form>
+			<label>Nombre de Usuario</label>
+			<input type="text" name="txt_name" placeholder="Ingrese Su Nombre" />
+			<label>Correo</label>
+			<input type="email" name="txt_email" placeholder="Ingrese Su Correo" /><br />
+			<label>Contraseña</label>
+			<input type="password" name="txt_pwd" />
+			<label>Sexo</label>
+			<select name="sele_gender">
+				<option>No Especificar</option>
+				<option>Hombre</option>
+				<option>Mujer</option>
+			</select><br />
+			<label>Pais</label>
+			<input type="text" name="txt_cntry" placeholder="Ingrese Su Pais" list="paises" /><br />
+				<datalist id="paises">
+                            <option value="Alemania">
+                            <option value="Argentina" />
+                            <option value="Brasil" />
+                            <option value="Belgica" />
+                            <option value="Dinamarca" />
+                            <option value="Colombia" />
+                            <option value="Espa&ntilde;a" />
+                            <option value="Francia">
+                            <option value="Holanda">
+                            <option value="M&eacute;xico" />
+                            <option value="Per&uacute;" />
+                            <option value="Portugal">
+                            <option value="Otro país" /> 
+                        </datalist>
+			<label>Subir tu foto</label>
+			<input type="file" name="file" accept="image/*" /><br />
+			<label>Cuentanos mas sobre ti</label><br/>
+			<textarea name="txta_aboutu" placeholder="Cuentanos mas sobre ti" rows="7" cols="75" /></textarea><br />
+			<label>Cuanto sabes de HTML5</label>
+			<input type="range" name="rng_html5" min="0" max="10" value="7" /><br />
+			<label>Desea subscribirse a nuestro boletin</label>
+			<input type="radio" name="rd_rss" value="Y" checked="checked" /><label>Si</label>
+			<input type="radio" name="rd_rss" value="Y" checked="checked" /><label>No</label>
+			<label>Cada cuantos dias desea recibirlo?</label>
+			<input id="short" type="number" name="dias" min="1" max="30" value="1"/><br />
+			<input type="checkbox" name="chk_tos" required="required" />
+			<label>He leido los termino de condiciones y uso</label><br />
+			<button type="submit">Enviar</button>
+			<button type="reset">Cancelar</button>
+
+			
+		</form>
+	</main>
+	<footer></footer>
+</body>
+</html>

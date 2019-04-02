@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	Nombre: <input type="text" id="txName" />
+	Apellido: <input type="text" id="txAp" />
+	Apellido2: <input type="text" id="txAp2" />
+	<button onclick="format(txName.value,txAp.value,txAp2.value)">Formatear</button>
+
+	<!-- Script -->
+	<script>
+		function format (nam,ap,ap2) {
+			alert(ap.toUpperCase()+' '+ap2.toUpperCase()+', '+nam.charAt(0).toUpperCase()+nam.substring(1,nam.length).toLowerCase());
+		}
+	</script>
+</body>
+</html>

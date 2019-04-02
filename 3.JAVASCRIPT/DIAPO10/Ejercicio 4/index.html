@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		body{
+			display: grid;
+			grid-template-columns: auto auto auto;
+			justify-content: space-around;
+			align-content: center;
+			grid-gap: 10px;
+		}
+		label{
+			grid-column: 2/3;
+		}
+		input,output{
+			grid-column: 1/4;
+		}
+		button{
+			grid-column: 2/3;
+			font-size: 20px;
+		}
+	</style>
+<body>
+	<label>Texto a encriptar: </label><input type="text" id="txEncript" />
+	<button onclick="endencrypt('en')">Encriptar</button>
+	<label>Encriptado: </label><output id='res'></output>
+	<label>Texto a desencriptar: </label><input type="text" id="txDesencr" />
+	<button onclick="endencrypt('den')">Desencriptar</button>
+	<label>Desencriptado: </label><output id='res2'></output>
+	<!-- Script -->
+	<script>
+		function endencrypt (a) {
+			var mensaje,cod;
+			if(a == 'en'){
+				mensaje = 'Introduce el codigo para encriptar';
+			}else if (a == 'den') {
+				mensaje = 'Introduce el codigo para desencriptar';
+			}
+			cod = codeGen(prompt(mensaje));
+
+			if(a == 'en'){
+				res.innerHTML = '';
+				for (i in txEncript.value) {
+					res.innerHTML += String.fromCharCode(txEncript.value.charCodeAt(i) + cod);
+				}
+			}else if (a == 'den') {
+				res2.innerHTML = '';
+				for (i in txEncript.value) {
+					res2.innerHTML += String.fromCharCode(txDesencr.value.charCodeAt(i) - cod);
+				}
+			}
+		}
+		function codeGen (cod) {
+			var num;
+			if(!(cod == undefined)){
+				num = cod.charCodeAt(0) - cod.length;
+				while (num > 9){
+					num = num.toString().split('');
+					cod = 0;
+					for (n of num) {
+						cod += parseInt(n);
+					}
+					num = cod;
+
+				}
+				return num;
+			}
+			return 3;
+		}
+	</script>
+</body>
+</html>

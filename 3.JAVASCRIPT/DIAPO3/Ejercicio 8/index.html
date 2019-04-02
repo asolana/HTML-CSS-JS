@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 8</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		//Gasolina por KM
+		const gasCar = 0.055;
+		const gasCiu = 0.098;
+		const pgasoil = 1.1;
+		function calcula(){
+			var carr = document.getElementById('carr').value,
+				ciu = document.getElementById('ciu').value,
+				carPrice,ciuPrice;
+
+			carPrice = (carr * gasCar)*pgasoil;
+			ciuPrice = (ciu * gasCiu)*pgasoil;
+
+
+			result.innerHTML = carPrice+ciuPrice+"€";
+		}
+	</script>
+</head>
+<body>
+	<label>Calculadora de Consumo de Gasolina</label>
+	<br />
+	<label>Distancia por Carretera: </label>
+	<input type="number" id="carr" placeholder="KMS" />
+	<br />
+	<label>Distancia por Ciudad: </label>
+	<input type="number" id="ciu" placeholder="KMS" />
+	<br />
+	<button onclick="calcula()">Calcular</button>
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<header></header>
+	<main>
+		<form>
+			<label for="dnibad">DNI(A-Z)</label>
+			<input type="text" name="dnibad" id="dnibad" pattern="^\d{8}[A-Za-z]$" />
+			<hr>
+			<label for="dni">DNI</label>
+			<input type="text" name="dni" id="dni" pattern="^\d{8}[A-HJ-NP-TV-Za-hj-np-tv-z]$" />
+			<hr>
+			<label for="dnixyz">DNI(XYZ)</label>
+			<input type="text" name="dnixyz" id="dnixyz" pattern="^((\d{8})|([XYZxyz]\d{7}))[A-HJ-NP-TV-Za-hj-np-tv-z]$" />
+			<hr>
+			<label for="hora">Hora(hh:mm:ss)</label>
+			<input type="text" name="hora" id="hora" pattern="(([01][0-9])|([2][0-3]))(:[0-5]\d){2}" />
+			<hr>
+			<label for="telf">Telefono</label>
+			<input type="text" name="telf" id="telf" pattern="^.+[1-9]\d{0,2}\s[0-9]{3}(\s[0-9]{2}){3}$" title="Formato (+00 000 00 00 00)" />
+			<hr>
+			<label for="datebad">Fecha(Mal)</label>
+			<input type="text" name="datebad" id="datebad" pattern="(\d\d-){2}\d{4}" />
+			<hr>
+			<label for="date">Fecha</label>
+			<input type="text" name="date" id="date" pattern="(([012][1-9])|([3][01]))-(([0][1-9])|([1][012]))-((([1][9])|([2][0]))\d\d)|([2][1][0][0])" />
+			<button type="submit">Enviar</button>
+		</form>
+	</main>
+	<footer></footer>
+</body>
+</html>

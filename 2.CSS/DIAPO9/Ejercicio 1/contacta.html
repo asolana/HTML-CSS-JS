@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>NO TRAVEL - Agencia de viages</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+			<figure>
+				<img src="img/logo.png" alt="No Travel" title="No Travel"/>
+			</figure>
+			<h1>No Travel</h1>
+			<form>
+				<fieldset>
+					<legend>Login</legend>
+					<div>
+						<label for="txt_user">Usuario:</label>
+						<input id="txt_user" type="text" name="user" />
+						<label for="txt_pwd">Contraseña:</label>
+						<input id="txt_pwd" type="password" name="password" />
+					</div>
+					<div>
+						<button type="submit">Login</button>
+						<a href="register.html">Register here!</a>
+					</div>
+					
+				</fieldset>
+			</form>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="barcelona.html"><img src="img/icobcn.png" />Barcelona</a></li>
+			<li><a href="roma.html"><img src="img/icoroma.png" />Roma</a></li>
+			<li><a href="paris.html"><img src="img/icoparis.png" />Paris</a></li>
+			<li><a href="contacta.html">Contacta</a></li>
+		</ul>
+	</nav>
+	<main >
+		<h2>Contactanos</h2>
+		<section class="contact">
+			<form id="f_contact">
+				<fieldset>
+					<label name="name">Nombre:</label>
+					<input type="text" id="name" /><br />
+					<label name="email">Correo:</label>
+					<input type="email" id="email" /><br />
+					<label for="option_question">Motivo de la consulta:</label><br />
+					<select id="option_question">
+						<option> - </option>
+						<option value="claim">Reclamación</option>
+						<option value="editcancel">Modificación/Cancelación del viaje</option>
+						<option value="faq">Preguntas frequentes</option>
+					</select><br />
+					<textarea id="question" rows="10" cols="50">
+					</textarea><br />
+					<button type="submit">Enviar</button>
+				</fieldset>
+			</form>
+		</section>
+		<section class="contact">
+			<iframe src="https://www.youtube.com/embed/dygag9tZ4Is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</section>	
+	</main>
+	<footer>
+			<a href="mailto:a.solana23@gmail.com"><h6>&#169 Aitor</h6></a>
+	</footer>
+</body>
+</html>

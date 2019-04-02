@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+	<script>
+		function escalar(im, sca){
+			im.height *= sca;
+			im.width *= sca;
+		}
+	</script>
+</head>
+<body>
+	<img src="./img/cashield.png" alt="Escudo capitan america" title="El escudo del capitan america" id="escudo" onclick="escalar(this,5);" height="100" width="100" />
+	<button onclick="escalar(escudo,2.5);">Click-me</button>
+</body>
+</html>

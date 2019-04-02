@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<script>
+  function dothings(){
+    var fig = document.createElement('figure');
+    var im = document.createElement('img');
+    im.src = 'http://www.creacionesabm.com/img/creacionesabm.png';
+    var figc = document.createElement('figcaption');
+    var figcT = document.createTextNode('Bienvenido a Mi página Web');
+    figc.appendChild(figcT);
+    fig.appendChild(im);
+    fig.appendChild(figc);
+    document.body.appendChild(fig);
+
+  }
+</script>
+<style>
+  .blue{background-color: #00f;}
+</style>
+
+<body>
+  <button onclick='dothings();'>Pasan cosas</button>
+</body>
+
+</html>

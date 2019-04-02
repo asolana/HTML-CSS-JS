@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{	
+	background: url('../img/bg.jpg');
+	background-repeat: no-repeat;
+}
+body{
+	width: 95vw;
+	margin:auto;
+	min-width: 450px; 
+	background-color: rgba(255,255,255,.3);
+}
+main{
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: wrap;
+	border-top: 2px solid #000;
+	background: none;
+}
+figure{
+	width: 100%;
+	flex:1;
+}
+img{
+	width: 100%;
+	min-width: 200px;
+}
+figcaption{
+	text-align: center;
+	margin: 0 auto 5px;
+}

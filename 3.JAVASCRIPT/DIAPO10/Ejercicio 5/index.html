@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5</title>
+</head>
+<body>
+	Nombre: <input type="text" id="txName" />
+	Apellido: <input type="text" id="txAp" />
+	Apellido2: <input type="text" id="txAp2" />
+	<button onclick="format(txName.value,txAp.value,txAp2.value)">Formatear</button>
+
+	<!-- Script -->
+	<script>
+		function format (nam,ap,ap2) {
+				nam = nam.trim();
+				var namnew = '';
+			if(nam.indexOf(' ') > 0){
+				nam = nam.split(' ');
+				for (i in nam) {
+					nam[i] = nam[i].charAt(0).toUpperCase()+nam[i].substring(1,nam[i].length).toLowerCase();
+					namnew += nam[i] + " ";
+				}
+
+			}else{
+				namnew = nam.charAt(0).toUpperCase()+namnew.substring(1,nam.length).toLowerCase();
+			}
+			alert(ap.toUpperCase()+' '+ap2.toUpperCase()+', '+namnew);
+		}
+	</script>
+</body>
+</html>

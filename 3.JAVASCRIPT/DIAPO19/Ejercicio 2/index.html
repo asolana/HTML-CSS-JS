@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      position: relative;
+    }
+    figure{
+      flex: 1;
+    }
+    img{
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <figure><img src="./img/martini.jpg" alt="Martini" /></figure>
+  <figure><img src="./img/manhattan.jpg" alt="Manhattan" /></figure>
+  <figure><img src="./img/bloodymary.jpg" alt="Bloody Mary" /></figure>
+  <figure><img src="./img/margarita.jpg" alt="Margarita" /></figure>
+  <figure><img src="./img/mojito.jpg" alt="Mojito" /></figure>
+  <figure><img src="./img/daiquiri.jpg" alt="Daiquiri" /></figure>
+  <figure><img src="./img/gintonic.jpg" alt="Gintonic" /></figure>
+  <script>
+    for (fig of document.getElementsByTagName('figure')) {
+      fig.addEventListener('click',function(){escalar(this);});
+    }
+    function escalar(it){
+      var newfig = document.createElement('figure');
+      var im = document.createElement('img');
+      newfig.appendChild(im);
+      document.body.insertBefore(newfig,document.body.firstChild);
+      im.src = it.firstChild.src;
+      newfig.style.position = 'fixed';
+      newfig.style.top = '50px';
+      newfig.style.left = ((window.innerWidth/2) - (newfig.clientWidth/2)) + 'px';
+      newfig.addEventListener('click',function(){this.remove();})
+    }
+  </script>
+</body>
+</html>

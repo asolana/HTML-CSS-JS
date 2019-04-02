@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<style>
+  body{
+    width: 30%;
+    margin:auto;
+    border: 2px solid #000;
+    border-radius: 25px;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <p>Esto es el párrafo 1</p>
+  <p>Esto es el párrafo 2</p>
+  <p>Esto es el párrafo 3</p>
+  <p>Esto es el párrafo 4</p>
+
+  <script>
+    for (p of document.getElementsByTagName('p')) {
+      p.addEventListener('click',function(){borrar(this);});
+      }
+
+      function borrar(p){
+        p.parentNode.removeChild(p);
+      }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+#wrap{
+	width: 90vw;
+	margin:	auto;
+	text-align: center;
+	font-size: 1.5vw;
+}
+header,nav,main,footer,aside{
+	border: .1em solid #000;
+	margin: .5%;
+}
+header{
+	text-align: center;
+	padding: 5vw;
+}
+nav, footer{
+	padding: 2vw;
+}
+main, aside{
+	display: inline-block;
+	padding: 10vw 1vw;
+	width: 72.3%;
+}
+aside{
+	width: 20%;
+}

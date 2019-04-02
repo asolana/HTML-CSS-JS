@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<label>Introduzca el radio:</label>
+	<input type="number" id="rad" placeholder="Radio" />
+	<br />
+	<label for="opp">Perímetro</label>
+	<input type="checkbox" id="opp" />
+	<label for="opa">Área</label>
+	<input type="checkbox" id="opa" />
+	<label for="opd">Diámetro</label>
+	<input type="checkbox" id="opd" />
+	<button onclick="calcula()">Calcula</button>
+	<br />
+	<output id="oout"></output>
+	<hr /> 
+</body>
+</html>
+
+<!--
+constante pi = 3.1416
+funcion calcula
+	leer r
+	leer oppe
+	leer opar
+	leer opdi
+
+	si opp 
+		escribir 2 * pi * r
+	fin si
+
+	si opa 
+		escribir pi * (r**2)
+	fin si
+
+	si opd 
+		escribir 2 * r
+	fin si
+
+fin funcion
+-->

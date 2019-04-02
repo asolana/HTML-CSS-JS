@@ -1,0 +1,23 @@
+main>figure{
+	border-radius: 5px;
+	filter: drop-shadow(0px 5px 2px #000);
+}
+main>figure img{
+	width: 100%;
+	border: 3px groove #000;
+	transition: all 1s, scale 3s;
+}
+main>figure:hover img{
+	filter: drop-shadow(0px 10px 5px #000);
+	transform: scale(1.5);
+}
+main>figure:hover{
+	z-index: 1;
+
+}
+main>figure figcaption{
+	margin: 10px;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}

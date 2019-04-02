@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Ejercicio 1b</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+
+		body{
+			width: 90vw;
+			margin:auto;
+			display: grid;
+			grid-template-columns: 40% auto 40%;
+			grid-template-areas: 
+			'he he .'
+			'me ma ma'
+			'fo fo fo';
+			grid-gap: 5px;
+		}
+
+		header{
+			grid-area: he;
+			background-color: #f0f8ff;
+		}
+		aside{
+			background-color: #ffffe0;
+		}
+		aside:last-of-type{grid-area: me}
+		main{
+			grid-area: ma;
+			display: grid;
+			grid-template-rows: auto auto;
+			grid-gap: 5px;
+		}
+		main>section{
+			background-color: #DAA520;
+		}
+		footer{
+			grid-area: fo;
+			display: grid;
+			grid-template-columns: 30% auto 30%;
+			grid-gap: 5px;
+		}
+		footer>section{
+			background-color: #E8FFE0;
+		}
+	</style>
+</head>
+<body>
+	<header>HEADER</header>
+	<aside>LOGIN</aside>
+	<aside>IZQ</aside>
+	<main>
+		<section>MAIN1</section>
+		<section>MAIN2</section>
+	</main>
+	<footer>
+		<section>FOOTER1</section>
+		<section>FOOTER2</section>
+		<section>FOOTER3</section>
+	</footer>
+</body>
+</html>

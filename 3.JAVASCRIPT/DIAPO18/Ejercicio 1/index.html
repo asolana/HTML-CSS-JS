@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<script>
+  window.onload = function() {
+    //Creo el titulo
+    var titE = document.createElement('h1');
+    var text = document.createTextNode(document.title);
+    titE.appendChild(text);
+    document.body.appendChild(titE);
+    //Uy el titulo no estava centrado
+    var centE = document.createElement('center');
+    centE.appendChild(titE);
+    document.body.appendChild(centE);
+    //ahora hago un paragrafo
+    var pE = document.createElement('p');
+    text = document.createTextNode(' Este es un texto de pruebas.');
+    pE.appendChild(text);
+    document.body.appendChild(pE);
+    //Mejor le pongo el color de fondo verde
+    document.body.style.backgroundColor =  '#0f0';
+    pE.setAttribute('class','blue');
+
+  };
+</script>
+<style>
+  .blue{background-color: #00f;}
+</style>
+
+<body>
+
+</body>
+
+</html>

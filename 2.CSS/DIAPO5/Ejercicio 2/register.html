@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>NO TRAVEL - Agencia de viages</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+			<figure>
+				<img src="img/logo.png" alt="No Travel" title="No Travel"/>
+			</figure>
+			<h1>No Travel</h1>
+			<form>
+				<fieldset>
+					<legend>Login</legend>
+					<div>
+						<label for="txt_user">Usuario:</label>
+						<input id="txt_user" type="text" name="user" />
+						<label for="txt_pwd">Contraseña:</label>
+						<input id="txt_pwd" type="password" name="password" />
+					</div>
+					<div>
+						<button type="submit">Login</button>
+						<a href="register.html">Register here!</a>
+					</div>
+					
+				</fieldset>
+			</form>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="barcelona.html">Barcelona</a></li>
+			<li><a href="roma.html">Roma</a></li>
+			<li><a href="paris.html">Paris</a></li>
+			<li><a href="contacta.html">Contacta</a></li>
+		</ul>
+	</nav>
+	<main >
+		<h2>Registrate</h2>
+		<form id="f_register">
+			<fieldset>
+				<label for="name">Nombre:</label>
+				<input type="text" id="name"/>
+				<label for="lname">Apellidos:</label>
+				<input type="lname" id="lname"/><br />
+				<label for="txt_user">Usuario:</label>
+				<input id="txt_user" type="text" name="user" placeholder="Introduzca su usuario" />
+				<label for="txt_pwd">Contraseña:</label>
+				<input id="txt_pwd" type="password" name="pwd" placeholder="Introduzca su contraseña"/>	
+				<label >Fecha de nacimiento:</label>
+				<input type="date" name="dbirth">
+				</select><br />
+				<label for="dni">DNI:</label>
+				<input type="text" id="dni"/><br />
+				<label for="addr">Direccion:</label>
+				<input type="text" id="addr" class="fullwidth"/><br />
+				<label for="poblacion">Población:</label>
+				<input type="text" id="poblacion"/>
+				<label for="provincia">Provincia:</label>
+				<input type="text" id="provincia"/><br />
+				<label for="cp">CP:</label>
+				<input type="text" id="cp" /><br />
+				<label for="email" >Correo:</label>
+				<input type="email" id="email" class="fullwidth" placeholder="Introduzca su email" /><br />
+				<input type="checkbox" name="TOS" value="tos" />
+				<label> Acepto formar parte de la web de viajes.</label>
+
+
+
+				<button type="submit">Enviar</button>
+			</fieldset>
+			
+		</form>		
+	</main>
+	<footer>
+			<a href="mailto:a.solana23@gmail.com"><h6>&#169 Aitor</h6></a>
+	</footer>
+</body>
+</html>

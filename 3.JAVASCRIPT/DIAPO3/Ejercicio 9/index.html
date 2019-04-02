@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 8</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		function calcula(){
+			var carr = parseFloat(document.getElementById('carr').value),
+				ciu = parseFloat(document.getElementById('ciu').value),
+				gasCar = parseFloat(document.getElementById('gasCar').value),
+				gasCiu = parseFloat(document.getElementById('gasCiu').value),
+				pconb = document.getElementById('pconb')
+				carPrice,ciuPrice;
+
+				if(isNaN(gasCar)||isNaN(gasCiu)){
+					if(isNaN(gasCar)){
+						document.getElementById('gasCar').style.borderColor = '#F00';
+						document.getElementById('gasCiu').style.borderColor = 'initial';
+					}else{
+						document.getElementById('gasCiu').style.borderColor = '#F00';
+						document.getElementById('gasCar').style.borderColor = 'initial';
+					}
+					result.innerHTML = "-€";
+				}else{
+					document.getElementById('gasCar').style.borderColor = 'initial';
+					document.getElementById('gasCiu').style.borderColor = 'initial';
+					if(isNaN(carr)||isNaN(ciu)){
+						if(isNaN(carr)){
+							carr = 0;
+						}else{
+							ciu = 0;
+						}
+					}
+					carPrice = (carr * gasCar)*pconb;
+					ciuPrice = (ciu * gasCiu)*pconb;
+
+					result.innerHTML = carPrice+ciuPrice+"€";
+				}
+
+		}
+	</script>
+</head>
+<body>
+	<label>Calculadora de Consumo de Gasolina</label>
+	<br />
+	<label>Precio del conbustible:</label>
+	<input type="number" id="pconb" placeholder="Eur" />
+	<br />
+	<label>Consumo de la gasolina por Carretera: </label>
+	<input type="number" id="gasCar" placeholder="Eur" />
+	<br />
+	<label>Consumo de la gasolina por Ciudad: </label>
+	<input type="number" id="gasCiu" placeholder="Eur" />
+	<br />
+	<hr />
+	<br />
+	<label>Distancia por Carretera: </label>
+	<input type="number" id="carr" placeholder="KMS" />
+	<br />
+	<label>Distancia por Ciudad: </label>
+	<input type="number" id="ciu" placeholder="KMS" />
+	<br />
+	<button onclick="calcula()">Calcular</button>
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

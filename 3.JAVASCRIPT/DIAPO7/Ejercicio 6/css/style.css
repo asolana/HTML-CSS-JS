@@ -1,0 +1,11 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	margin: auto;
+	width: 80%;
+	display: grid;
+	text-align: center;
+	justify-content: center;
+}

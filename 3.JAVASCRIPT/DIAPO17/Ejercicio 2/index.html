@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<h1>CATS!</h1>
+	<img src="cat.jpg" alt="Gatito" />
+	<p>So cute!</p>
+	<ul>
+		<li>Lizzie</li>
+		<li>Daemon</li>
+	</ul>
+	<button onclick="cosas();">Pasan cosas</button>
+	<script>
+		function cosas () {
+			document.body.firstElementChild.innerHTML = 'NOT CATS!';
+			for( li of document.getElementsByTagName('li')){
+				li.style.color = 'rgb(0,0,255)';
+			}
+			document.images[0].src = 'dog.jpg';
+			document.images[0].alt = 'Perrito';
+		}
+	</script>
+</body>
+</html>

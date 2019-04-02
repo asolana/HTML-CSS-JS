@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		const diff = 0.62137;
+		//m =  km * 0.62137
+		//km =  km / 0.62137
+		function calcula(){
+			var dis = parseFloat(n1.value),
+				res = 0;
+				if(document.getElementById("medida").value != 'K'){
+					res = dis*diff +" Miles";
+				}else{
+					res = dis/diff +" Kilometers";
+				}
+			result.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<label>Convertidor de distancia</label>
+	<br />
+	<select id="medida"/>
+		<option value="K">to Miles</option>
+		<option value="M">to Kilometers</option>
+	</select>
+	<input type="number" id="n1" />
+	<button onclick="calcula()">Calcula</button>
+	<br />
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

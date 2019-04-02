@@ -1,0 +1,158 @@
+@font-face{
+	font-family: facebook;
+	src: url(FACEBOLF.OTF);
+}
+/*RESETS*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, Sans-serif;
+	line-height: 1.34;
+
+}
+body{
+	width: 100vw;
+	background: linear-gradient(white, #D3D8E8);
+}
+a{
+	text-decoration: none;
+	color: #9cb4d8;
+}
+header>div, main>div{
+	width: 1200px;
+	margin: auto;
+}
+/*HEADER*/
+header{
+	min-height: 82px;
+	background-color: #3b5998;
+	background-image: linear-gradient(#4e69a2, #3b5998 50%);
+	border-bottom: 1px solid #133783;
+	color:white;
+}
+header>div>span{
+	display: inline-block;
+	font-family: facebook;
+	font-size: 55px;
+	margin: 10px 320px 10px 30px; 
+}
+header section, header fieldset{
+	display: inline-block;
+	border: none;
+	vertical-align: text-bottom;
+}
+header fieldset{
+	vertical-align: middle;
+	margin-left: 25px;
+}
+header label, header a{
+	font-size: small;
+}
+input[type=text], input[type=password]{
+	min-width: 200px; 
+	padding: 4px 0; 
+	margin: 10px 0;
+}
+header button{
+	border: 1px solid #29487d;
+	background-color: #4267b2;
+	color: #FFF;
+	padding: 4px 5px;
+}
+/*/HEADER*/
+/*MAIN*/
+main>div>section{
+	display: inline-block;
+	width: 532px;
+	vertical-align: top;
+}
+section>span{
+	padding: 30px 10px 50px;
+	text-align: left;
+	display: block;
+	color: #0e385f;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 29px;
+	padding-top: 40px;
+	word-spacing: -1px;
+}
+main section>form{
+	margin: 20px 0 10px 70px;
+}
+main section>form>span{
+	color: #333;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 1.34;
+}
+main section>form>p{
+	color: #1d2129;
+	font-weight: normal;
+	font-size: 19px;
+	margin-top: 5px;
+}
+main section>form>input[type=text],main section>form>input[type=password]{
+	font-size: 18px;
+	padding: 8px;
+	width: 100%;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: #bdc7d8;
+}
+main form>input:first-of-type, main form>input:nth-child(4){
+	width: 120px !important;
+	display: inline-block;
+}
+main form>input:nth-child(4){
+	margin:10px;
+}
+main form>select{
+	font-size: 13px;
+	height: 30px;
+	padding: 5px;
+}
+main form>a{
+	display: inline-block;
+	font-size: 11px;
+	max-width: 150px;
+	color: #365899;
+}
+input[type=radio]{
+	margin: 15px 5px 15px 15px;
+}
+h6{
+	color: #777;
+	font-size: 11px;
+	width: 340px;
+}
+main button{
+	background: linear-gradient(#67ae55, #578843);
+	background-color: #69a74e;
+	box-shadow: inset 0 1px 1px #a4e388;
+	border-color: #3b6e22 #3b6e22 #2c5115;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #133783;
+	min-width: 145px;
+	padding: 7px 15px;
+	text-shadow: 0 1px 2px rgba(0,0,0,.5);
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 15px;
+}
+main form{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #133783;
+}
+section span:last-child{
+	margin: 0 0 0 75px;
+	color: #666;
+	font-size: 13px;
+	font-weight: bold;
+	padding-top: 15px;
+}
+/*/MAIN*/

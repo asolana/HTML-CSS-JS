@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+
+</head>
+<body>
+	<h1>Cuantos dias faltan para tu cumpleaños</h1>
+	Dia: <input type="number" id="d" />
+	Mes: <input type="number" id="m" />
+	Año: <input type="number" id="y" />
+	<br />
+	<button onclick="calcular(d.value,m.value,y.value);">Calcular</button>
+	<br />
+	<output id='result'></output>
+	<script>
+		function calcular(d,m,y) {
+			var hoy = new Date();
+			hoy.setHours(0,0,0,0);
+			var cumple = new Date(hoy.getFullYear(),m-1,d,0,0,0,0);
+
+			if(cumple.getTime() == hoy.getTime()){
+				result.innerHTML = 'Felicidades';
+			}else{
+				if(cumple<hoy){
+					cumple.setFullYear(cumple.getFullYear()+1);
+				}
+				var dif = cumple-hoy;
+				dif = parseInt(dif/(1000*60*60*24));
+				result.innerHTML = 'Faltan '+ dif +' dias';
+			}
+		}
+	</script>
+</body>
+</html>

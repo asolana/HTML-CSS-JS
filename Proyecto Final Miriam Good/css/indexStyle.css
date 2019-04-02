@@ -1,0 +1,132 @@
+/* Contenido */
+main{
+	text-align: justify;
+	line-height: 1.7vw;
+}
+
+@media screen and (max-width: 1200px) {
+	main{
+		line-height: initial;
+	}
+}
+
+section{
+	padding: 2vw 0;
+}
+
+section article{
+	padding: 5vw 7vw;
+	position: relative;
+}
+section:not(:first-child) article{
+	display: grid;
+	grid-template-columns: 10% 10% auto 70%;
+	justify-content: center;
+	align-items: center;
+	perspective: 1500px;
+}
+
+section:not(:first-child) > article:nth-of-type(even){
+	grid-template-columns: 70% auto 10% 10%;
+}
+
+section:not(:first-child) > article:nth-of-type(even) > h3{
+	grid-column: 4;grid-row: 1
+}
+
+section:not(:first-child) > article:nth-of-type(even) > p:first-of-type{
+	grid-column:1;
+}
+
+section:nth-of-type(even) > article:nth-of-type(even){
+	padding: 7vw 7vw;
+	position:relative;
+}
+
+section:nth-of-type(even) > article:nth-of-type(even):hover{
+	padding: 7vw 7vw;
+	box-shadow:
+			inset 0px 30px 10px -25px #211f1f,
+			inset 0px -30px 10px -25px #211f1f;
+	transform: scale(.99);
+	transition: all .1s ease-in-out;
+}
+
+section:nth-of-type(even) > article:nth-of-type(odd){
+	z-index: 2;
+}
+
+section:nth-of-type(even) > article:nth-of-type(odd):hover{
+	box-shadow: 0px 0px 30px 10px #211f1f;
+	transform: scale(1.01);
+	transition: all .1s ease-in-out;
+}
+
+section:nth-of-type(even) > article:nth-of-type(odd)::before{
+	content: '';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #8cd5e9;
+	z-index: -1;
+	transform: skewY(3deg);
+	box-shadow: 0 0 5px #000;
+}
+
+section:nth-of-type(even) > article:nth-of-type(odd)::after{
+	content: '';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #8cd5e9;
+	z-index: -1;
+	transform: skewY(-3deg);
+}
+
+h3{
+	position: relative;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	background-color: rgba(0,0,0,0);
+}
+
+h2{
+	padding: 2vw 0;
+	text-align: center;
+  font-size: xx-large;
+
+}
+section > article > p{
+	grid-column: 4/5;
+}
+
+article > p:last-of-type{
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+p:last-of-type span{
+	margin: 0 7px;
+	padding: 1px 5px;
+	border: 1px solid #999;
+	background-color: rgba(204, 204, 204, 0.25);
+}
+
+article:nth-of-type(even) > p:last-of-type{
+	grid-column: 1
+}
+
+p:last-of-type span::before{
+	content: '#';
+	font-size: smaller;
+}

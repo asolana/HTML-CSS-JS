@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Ejercicio 1a</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+
+		body{
+			width: 90vw;
+			margin:auto;
+			display: grid;
+			grid-template-columns: 30% auto 30%;
+			grid-template-areas: 
+			'he he de'
+			'ma ma de'
+			'. fo fo';
+			grid-gap: 5px;
+		}
+
+		header{
+			grid-area: he;
+			background-color: #f0f8ff;
+		}
+		aside{
+			background-color: #ffffe0;
+		}
+		aside:last-of-type{
+			grid-area: de;
+		}
+		main{
+			grid-area: ma;
+			background-color: #DAA520;
+		}
+		footer{
+			grid-area: fo;
+			background-color: #E8FFE0;
+		}
+	</style>
+</head>
+<body>
+	<header>HEADER</header>
+	<aside>IZQ</aside>
+	<main>MAIN</main>
+	<aside>DER</aside>
+	<footer>FOOTER</footer>
+</body>
+</html>

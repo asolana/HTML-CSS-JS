@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4</title>
+<script>
+	function calc(){
+		resu = 1;
+
+		for(let i=1;i<=parseInt(nn2.value);i++){
+			resu *= parseInt(nn1.value);
+		}
+		res.innerHTML = resu;
+	}
+</script>
+</head>
+<body>
+	<main>
+		<input type="number" id="nn1" />elevado a
+		<input type="number" id="nn2" /><br />
+		<input type="button" onclick="calc();" value="Calcular" /><br />
+		<output id="res"></output>
+	</main>
+</body>
+</html>

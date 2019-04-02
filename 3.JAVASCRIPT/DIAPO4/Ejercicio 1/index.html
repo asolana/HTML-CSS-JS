@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Calculadora de IVA</title>
+	<style>
+		*{padding:0;margin:0;}
+		body{
+			width: 100vw;
+		}
+		header,main {
+			width: 50%;
+			margin: auto;
+			border: 1px solid #000;
+			margin: .5vw;
+			padding: 3vw;
+		}
+		h1{font-size: 3vw;}
+		h1+span{
+			font-size: 2vw;
+			font-weight: bold;
+		}
+		main{
+			display: grid;
+			grid-template-columns: auto auto auto;
+		}
+		main>div{text-align: right;}
+		main>div:nth-child(3){
+			text-align: left;
+			padding-left: 1.5vw;
+		}
+		select{margin: 1vw 0;}
+	</style>
+	<script>
+		function calcular(){
+			//leer el precio e IVA introducidos por el usuario
+			var precio = parseFloat(document.getElementById('precio').value);
+			var iva = parseFloat(document.getElementById('iva').value);
+
+			//realizar los cálculos
+			precio*=iva;
+
+			//mostrar el resultado
+			document.getElementById('resultado').innerHTML = precio.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora de IVA</h1>
+		<span>Espe's Bussiness S.L.</span>
+	</header>
+	<main>
+		<div>Importe sin IVA</div>
+		<div>
+			<input type="number" min="0" id="precio"/><br />
+			<select id="iva">
+				<option value="1.21">Normal (21%)</option>
+				<option value="1.1">Reducido (10%)</option>
+				<option value="1.04">Super reducido (4%)</option>
+			</select><br />
+			<button onclick="calcular();">Calcular</button>
+		</div>
+		<div>euros</div>
+		<div>Importe final:</div>
+		<div><output id="resultado"></output></div>
+	</main>
+</body>
+</html>

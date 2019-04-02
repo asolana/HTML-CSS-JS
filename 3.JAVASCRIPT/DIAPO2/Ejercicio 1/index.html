@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Tests</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+		body{width: 80%;margin:auto;}
+		div{
+			border: 1px solid #000;
+
+		}
+	</style>
+	<script>
+		//Calculadora MRU
+		function calcular(){
+			var x = parseFloat(inicial.value),
+				v = parseFloat(velocidad.value),
+				t = parseFloat(tiempo.value);
+
+			var res = x+v*t;
+
+			resultado.textContent = res;
+
+			console.log('Todo correcto, resultado: ', res);
+		};
+		function changeSize(){
+			document.body.style.fontSize=fsize.value+'px';			
+		}
+		function showTheTruth(){
+			if(cah.getAttribute("src") == "img/cashield.png"){
+				alert('Quieres saber la verdad?');
+				if(confirm('Seguro?')){
+					cah.src = "img/hydra.png";
+					cah.alt = "HAIL HYDRA";
+					cah.title = "HAIL HYDRA";
+				}
+			}else{
+				var ans = prompt("HAIL");
+				if(ans =="HYDRA"){
+					cah.src = "img/cashield.png";
+					cah.alt = "Escudo del capitan america";
+					cah.title = "Escudo del capitan america";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<p>Con diez cañones por banda</p>
+		<p>viento en popa a toda vela</p>
+		<p>no corta el mar sino vuela</p>
+		<p>un velero bergantín</p>
+	<input type="range" id="fsize" min="10" max="60" value="15" step="5"
+		onmousedown="this.addEventListener('mousemove',changeSize)"; />
+	</div>
+	<hr />
+	<div>
+		<h1>Calculadora MRU</h1>
+		<span>Posición inicial:</span>
+		<input type="number" id="inicial" value="0" />
+		<span>(m)</span><br />
+		<span>Velocidad:</span>
+		<input type="number" id="velocidad" value="0" />
+		<span>(m/s)</span><br />
+		<span>Tiempo:</span>
+		<input type="number" id="tiempo" value="0" />
+		<span>(s)</span><br />
+		<button onclick="calcular();">Calcular</button><br />
+
+		<span>RESULTADO:</span>
+		<output id="resultado">0</output><span>(m)</span>
+	</div>
+	<hr />
+	<div>
+		<script>
+			document.write('Hola mundo! :D');
+		</script>
+		<button onclick="document.write('Hola mundo! :D');">Adios Mundo</button>
+	</div>
+	<div>
+		<img src="img/cashield.png" id="cah" alt="Escudo del capitan america" title="Escudo del capitan america"
+			onclick="showTheTruth();" />
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3</title>
+</head>
+<body>
+  <center>
+    <img src="./img/gdice.png" />
+  </center>
+  <script>
+
+      var im = ['./img/gdice.png',
+                './img/gdice1.png',
+                './img/gdice2.png',
+                './img/gdice3.png',
+                './img/gdice4.png',
+                './img/gdice5.png'];
+      var imid = 0;
+
+      setInterval(function () {
+        document.images[0].src = im[imid];
+        imid++;
+        if(imid > 5){
+          imid = 0;
+        }
+      }, 5000);
+
+
+  </script>
+</body>
+</html>

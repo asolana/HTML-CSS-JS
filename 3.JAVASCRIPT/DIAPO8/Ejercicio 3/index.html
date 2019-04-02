@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+	<script src="./js/js.js"></script>
+</head>
+<body>
+	<h1>Juego de piedra papel tijera</h1>
+	<section>
+		<figure>
+			<figcaption>Jugador 1</figcaption>
+			<img src="./img/interrogacion.png" alt="" height="200" width="200" id="imgJugador">
+		</figure>
+		<figure>
+			<figcaption>CPU</figcaption>
+			<img src="./img/interrogacion.png" alt="" height="200" width="200" id="imgCPU">
+		</figure>
+	</section>
+	<output id="resultado"></output>
+	<section>
+		<article>
+			<h3>Selecciona tirada</h3>
+			<figure>
+				<figcaption>Piedra</figcaption>
+				<img src="./img/piedra.png" alt="" height="75" width="75"  onclick="tirada('piedra')">
+			</figure>
+			<figure>
+				<figcaption>Papel</figcaption>
+				<img src="./img/papel.png" alt="" height="75" width="75" onclick="tirada('papel')">
+			</figure>
+			<figure>
+				<figcaption>Tijera</figcaption>
+				<img src="./img/tijera.png" alt="" height="75" width="75" onclick="tirada('tijera')">
+			</figure>
+			<figure>
+				<figcaption>Lagarto</figcaption>
+				<img src="./img/lagarto.png" alt="" height="75" width="75"  onclick="tirada('lagarto')">
+			</figure>
+			<figure>
+				<figcaption>Spock</figcaption>
+				<img src="./img/spock.png" alt="" height="75" width="75"  onclick="tirada('spock')">
+			</figure>
+		</article>
+		<article>
+			<h3>Estadísticas</h3>
+			Partidas: <span id="partidas"></span>
+			Ganadas: <span id="ganadas"></span>
+			Perdidas: <span id="perdidas"></span>
+			Empatadas: <span id="empatadas"></span>
+		</article>
+	</section>
+</body>
+</html>

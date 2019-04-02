@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Ejemplo 1</title>
+	<style>
+		*{
+			background-color: #000;
+			color: #fff;
+			font-size: 18vw;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<span id='horas'></span>
+	<span id='minutos'></span>
+	<span id='segundos'></span>
+<script>
+	var fin = new Date();
+	fin.setHours(20,0,0,0);
+
+	function calcular () {
+		var ahora = new Date();
+		var seg = parseInt((fin-ahora)/1000);
+
+		var segundos = seg%60;
+		var minutos = parseInt(seg/60)%60;
+		var horas = parseInt(seg/3600)%24;
+
+		if(segundos<10) segundos = '0'+ segundos;
+		if(minutos<10) minutos = '0'+ minutos;
+		if(horas<10) horas = '0'+ horas;
+
+		document.getElementById('segundos').innerHTML = segundos;
+		document.getElementById('minutos').innerHTML = minutos + ' : ';
+		document.getElementById('horas').innerHTML = horas + ' : ';
+	}
+	setInterval(calcular, 500);
+</script>
+</body>
+</html>

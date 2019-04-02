@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<title>Ejercicio 6</title>
+	<script src=./js/js.js></script>
+</head>
+<body>
+	<h1>Impedancia total</h1>
+	Resistencia:<input type="text" id="r" />
+	Inductancia de la bobina:<input type="text" id="l" />
+	Capacidad del condensador:<input type="text" id="c" />
+	Frecuencia de entrada:<input type="text" id="f" />
+	<button onclick="calcula(r.value,l.value,c.value,f.value,result)">Calcular</button>
+	Impedancia:<output id="result"></output>
+</body>
+</html>

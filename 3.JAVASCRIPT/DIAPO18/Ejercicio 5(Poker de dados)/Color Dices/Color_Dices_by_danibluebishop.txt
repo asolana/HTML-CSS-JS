@@ -1,0 +1,19 @@
+Set de imágenes de Dados de Seis Caras
+======================================
+
+Hay dos subsets dentro de este paquete:
+
+	* Un set de dados con resolución 300 dpi
+	* Un set de dados con resolución  72 dpi
+
+Ambos sets están formados por seis imágenes, una por cada cara de un dado, y se han generado en 5 colores: verde, azul, gris, rosa y rojo.
+
+======================================
+
+Este set de imágenes PNG ha sido creado por Daniel Ramírez Martínez (a.k.a. Dani bISHOP).
+
+Si has pagado algo por esta descarga, te han estafado. Este contenido es gratuito y libre, bajo licencia Creative Commons Atribution Non-Comercial Share-Alike. Puedes copiar, regalar e imprimir este contenido tantas veces como quieras.
+
+Puedes derivar obras de este contenido, pero debes mantener la misma licencia. Aparte, te agradecería que me notificaras el uso para sentirme aún más orgulloso de mi humilde aportación ;)
+
+Ante cualquier duda, accede a http://danibishop.com o contacta con el autor a través de Twitter (http://twitter/danibluebishop) o la dirección de correo braintown@danibishop.com

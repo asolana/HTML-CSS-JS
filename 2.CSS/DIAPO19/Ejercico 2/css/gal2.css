@@ -1,0 +1,46 @@
+main>figure{
+	border: 3px groove #000;
+	border-radius: 5px;
+}
+main>figure:hover{
+	filter: drop-shadow(0px 10px 5px #000);
+}
+main>figure>img{
+	width: 100%;
+	min-width: 300px;
+	overflow: hidden;
+}
+main>figure figcaption{
+	margin: 10px;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+main>figure:first-of-type{
+	filter: sepia(100%);
+}
+main>figure:nth-of-type(2){
+	filter: blur(1px);
+}
+main>figure:nth-of-type(3){
+	filter: brightness(75%);
+}
+main>figure:nth-of-type(4){
+	filter: contrast(75%);
+}
+main>figure:nth-of-type(5){
+	filter: hue-rotate(99deg);
+}
+main>figure:nth-of-type(6){
+	filter: grayscale(79%);
+}
+main>figure:nth-of-type(7){
+	filter: saturate(267%);
+}
+main>figure:nth-of-type(8){
+	filter: invert(79%);
+}
+main>figure:nth-of-type(9){
+	filter: opacity(50%);
+}

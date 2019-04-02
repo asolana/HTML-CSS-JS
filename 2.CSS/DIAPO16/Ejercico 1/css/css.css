@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #000;
+}
+h1{
+	font-size: 75px;
+}
+body{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+header,footer{
+	border: 2px solid #EAEAEF;
+	padding: 40px;
+}
+main{
+	margin: 20px 0;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 40% auto;
+	grid-gap: 10px;
+	border: 2px solid #EAEAEF;
+}
+main figure>img{
+	width: 100%;
+}
+main figure figcaption{
+	margin: 10px;
+	font-size: 25px;
+	color: #000;
+	text-shadow: 1px 1px 1px #EAEAEF;
+}
+main>section:last-child{
+	display: grid;
+	grid-template-columns: auto auto;
+	margin: 0 10px;
+}
+
+
+@media screen and (max-width: 1000px){
+	h1{
+		font-size: 40px;
+	}
+	main figure>img{
+		width: 120%;
+	}
+}
+@media screen and (max-width:700px){
+	main{
+		grid-template-columns: auto;
+	}
+	main figure>img{
+		width: 100%;
+	}
+}

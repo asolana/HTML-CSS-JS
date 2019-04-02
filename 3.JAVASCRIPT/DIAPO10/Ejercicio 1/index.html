@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<input type="text" id="cadena">
+	<select name="metodos" id="met" onchange="piloto(this.value)">
+		<option value="chat">charAt()</option>
+		<option value="ccat">concat()</option>
+		<option value="repl">replace()</option>
+		<option value="iof">indexOf()</option>
+		<option value="liof">lastIndexOf()</option>
+		<option value="sear">search()</option>
+		<option value="slic">slice()</option>
+		<option value="spli">split()</option>
+		<option value="subs">substring()</option>
+		<option value="tolc">toLowerCase()</option>
+		<option value="touc">toUpperCase()</option>
+		<option value="trim">trim()</option>
+	</select>
+	<!-- Script -->
+	<script>
+		function piloto (op) {
+			var txt = cadena.value;
+			switch (op) {
+				case 'chat':
+					var i = prompt('Indica el indice del caracter');
+					alert(txt.charAt(i));
+					break;
+				case 'ccat':
+					var temp = prompt('Indica el texto a concatenar');
+					alert(txt.concat(temp));
+					break;
+				case 'repl':
+					var temp = prompt('Indica el texto a remplazar');
+					var temp2 = prompt('Indica el texto para remplazar');
+					alert(txt.replace(temp,temp2));
+					break;
+				case 'iof':
+					var c = prompt('Indica el caracter');
+					alert(txt.indexOf(c));
+					break;
+				case 'liof':
+					var c = prompt('Indica el caracter');
+					alert(txt.indexOf(c));
+					break;
+				case 'sear':
+					var temp = prompt('Indica el texto a buscar');
+					alert(txt.search(temp));
+					break;
+				case 'slic':
+					var i = prompt('Indica des de donde deseas cortar');
+					var i2 = prompt('Indicia hasta donde deseas cortar');
+					alert(txt.slice(i,i2));
+					break;
+				case 'spli':
+					var c = prompt('Introduce el caracter delimitador entre los elementos');
+					alert('Hay un total de '+txt.split(c).length +' items. Y estos son: '+txt.split(c));
+					break;
+				case 'subs':
+					var i = prompt('Indica el inicio de la subcadena');
+					var i2 = prompt('Indica la longitud de la subcadena');
+					alert(txt.substring(i,i2));
+					break;
+				case 'tolc':
+					alert(txt.toLowerCase());
+					break;
+				case 'touc':
+					alert(txt.toUpperCase());
+					break;
+				case 'trim':
+					alert(txt.trim());
+					break;
+				default:
+					break;
+			}
+		}
+	</script>
+</body>
+</html>

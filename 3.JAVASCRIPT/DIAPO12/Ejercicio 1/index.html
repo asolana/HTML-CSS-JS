@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+	<style>
+		input{
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+
+		<label>Numero 1</label><input type="number" id="n1">
+		<label>Numero 2</label><input type="number" id="n2">
+		<label>Numero 3</label><input type="number" id="n3">
+		<label>Numero 4</label><input type="number" id="n4">
+		<label>Numero 5</label><input type="number" id="n5">
+	<button onclick="getArr()">Recoger Números</button><br />
+	<output id="arrTxt"></output>
+	<hr />
+	<input type="number" id='porpush'><button onclick="arr.push(porpush.value);porpush.value = '';showArr();">Add por Push</button><br /><hr />
+	
+	<button onclick="sumar()">Sumar</button><output id='sum'></output><br /><hr />
+	<button onclick="maximo()">Maximo</button><output id='ma'></output><br /><hr />
+	<button onclick="promedio()">Promedio</button><output id='avg'></output><br /><hr />
+	<button onclick="escalar()">Escalar</button><output id='es'></output><br /><hr />
+	<button onclick="escalar2()">Escalar2</button><output id='es2'></output><br /><hr />
+	<script>
+		var arr = [];
+		var a;
+		function getArr() {
+			
+			for(o of document.getElementsByTagName('input')){
+				if(Boolean(o.value) && o.id != 'porpush'){
+					arr.push(o.value);
+					o.value = '';
+				} 
+			}
+			showArr();
+		}
+		function showArr () {
+			arrTxt.innerHTML = 'Estas trabajando con: ' + arr.toString().bold();
+		}
+		function sumar (op = 0) {
+			var total = 0;
+			for (o of arr) {
+				total += parseFloat(o);
+			}
+			a = total;
+			if(op == 0){
+				sum.innerHTML = total;
+			}
+			
+
+		}
+		function maximo () {
+			var max = parseInt(arr[0]);
+			for (o of arr) {
+				if(max<parseInt(o)) max = parseInt(o);
+			}
+			ma.innerHTML = max;
+		}
+		function promedio () {
+			sumar(1);
+			var av = a/arr.length;
+			avg.innerHTML = av;
+		}
+		function escalar () {
+			var esc = prompt('A cuanto deseas escalar');
+			for (i in arr) {
+				arr[i] = parseInt(arr[i])*esc;
+			}
+			es.innerHTML = arr;
+			showArr();
+		}
+		function escalar2 () {
+			var esc = prompt('A cuanto deseas escalar');
+			var tmp = [];
+			for (i in arr) {
+				tmp.push(parseInt(arr[i])*esc);
+			}
+			es2.innerHTML = tmp;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+	<style>
+		b{
+			font-size: 25px;
+		}
+	</style>
+
+</head>
+<body>
+	<main>
+		<article>
+			<span><b>Imprime los números de 1 a 10 en orden ascendente</b></span>
+			<section>
+				<p>FOR</p>
+					<script>	
+						var for1 = "";
+						for(let i = 1; i <= 10; i++){
+							for1 += i+",";
+						}
+						document.write(for1.substring(0,for1.length-1)+"<br />");
+					</script>
+			</section>
+			<section>
+				<p>WHILE</p>
+				<script>
+					var c1 = 1;
+					var while1 = "";
+					while (c1<11) {
+						while1 += c1 + ", ";
+						c1++;
+					}
+					document.write(while1.substring(0,while1.length-2)+"<br />");
+				</script>
+			</section>
+			<section>
+				<p>DO..WHILE</p>
+					<script>	
+						var c2 = 1;
+						var do1 = "";
+						do{
+							do1 += c2 + ", ";
+							c2++;
+						}while(c2 < 11);
+						document.write(do1.substring(0,do1.length-2)+"<br />");
+					</script>
+			</section>
+		</article>
+		<article>
+			<span><b>Imprime los números pares del 0 al 100</b></span>
+			<section>
+				<p>FOR</p>
+				<script>
+					var for2 = "";
+					for(let i = 0; i <= 100; i+=2){
+						for2 += i+", ";
+					}
+					document.write(for2.substring(0,for2.length-2)+"<br />");
+				</script>
+			</section>
+			<section>
+				<p>WHILE</p>
+				<script>
+					var c11 = 0;
+					var while2 = "";
+					while (c11<101) {
+						while2 += c11 + ", ";
+						c11+=2;
+					}
+					document.write(while2.substring(0,while2.length-2)+"<br />");
+				</script>
+			</section>
+			<section>
+				<p>DO..WHILE</p>
+				<script>
+					var c12 = 0;
+					var do2 = "";
+					do{
+						do2 += c12 + ", ";
+						c12+=2;
+					}while(c12 < 101);
+					document.write(do2.substring(0,do2.length-2)+"<br />");
+				</script>
+			</section>
+		</article>
+		<article>
+			<span><b>Imprime los múltiplos de 5 del 100 al 5(descendente)</b></span>
+			<section>
+				<p>FOR</p>
+				<script>
+					var for3 = "";
+					for(let i = 100; i >= 0; i-=5){
+						for3 += i+", ";
+					}
+					document.write(for3.substring(0,for3.length-2)+"<br />");
+				</script>
+			</section>
+			<section>
+				<p>WHILE</p>
+				<script>
+					var c21 = 100;
+					var while3 = "";
+					while (c21>=0) {
+						while3 += c21 + ", ";
+						c21-=5;
+					}
+					document.write(while3.substring(0,while3.length-2)+"<br />");
+				</script>
+			</section>
+			<section>
+				<p>DO..WHILE</p>
+				<script>
+					var c22 = 100;
+					var do3 = "";
+					do{
+						do3 += c22 + ", ";
+						c22 -=5;
+					}while(c22 >= 0);
+					document.write(do3.substring(0,do3.length-2)+"<br />");
+				</script>
+			</section>
+		</article>
+	</main>
+</body>
+</html>

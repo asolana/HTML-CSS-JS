@@ -1,0 +1,19 @@
+Set of six sided dices images
+======================================
+
+There are two subsets inside this package:
+
+	* One dice set with a resolution of 300 dpi
+	* One dice set with a resolution of  72 dpi
+
+Both sets have six images, one for each side in a dice, and they have been rendered in 5 different colors: green, blue, grey, pink and red.
+
+======================================
+
+This set of PNG images has been created by Daniel Ramírez Martínez (a.k.a. Dani bISHOP).
+
+If you have paid anything for this download, you have been swindled. This content is free (as in free beer) and free (as in free speech), under a Creative Commons Atribution Non-Comercial Share-Alike. You can copy, give as a gift or print this content as many times as you like.
+
+You can make derived work from this content, but you must keep the same license. Besides, I would be grateful if you notified me when you use this content so I can feel even prouder of my humble contribution ;)
+
+If you have any doubt, browse http://danibishop.com, or contact me via Twitter (http://twitter/danibluebishop) or via the email address braintown@danibishop.com

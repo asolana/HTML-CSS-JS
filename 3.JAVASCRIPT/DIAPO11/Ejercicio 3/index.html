@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+<body>
+	<h1>Calculadora letra DNI</h1>
+	<label for="dni">Introduzca dni(Sin letra):</label><input type="text" id='dni' oninput="calcularLetra()"/><output id="letra"></output>
+
+	<script>
+		const dniLetra = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+		function calcularLetra(){
+			if(dni.value.length === 8 && !isNaN(dni.value)){
+				letra.value = dniLetra[dni.value%23];
+			}else{
+				letra.value='';
+			}
+		}
+	</script>
+</body>
+</html>

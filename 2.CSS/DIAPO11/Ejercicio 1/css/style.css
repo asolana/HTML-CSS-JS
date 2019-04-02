@@ -1,0 +1,173 @@
+@font-face{
+	font-family: TitleFont;
+	src: url('Oleander Cakes.ttf'); 
+}
+*:not(html){
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica';
+}
+body{
+	display: flex;
+	flex-direction: column;
+	background-color: #FDD9BF;
+}
+img{
+	min-width: 100px;
+	max-width: 250px;
+	width: 100%;
+}
+p{
+	padding: 1vw 0;
+	text-indent: 1vw;
+}
+a{
+	text-decoration: none;
+	color: rgba(149, 9, 9, 0.8);
+}
+/*HEADER*/
+header{
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 2px solid rgba(149, 9, 9, 0.8);
+	max-height: 150px;
+}
+header section{
+	min-width: 100px;
+	flex:2;
+	margin: 1vw 2vw; 
+}
+header h1{
+	flex:3;
+	font-family: TitleFont;
+	font-size: 10vw;
+	color: rgba(149, 9, 9, 0.8);
+	text-shadow: 1px 4px 6px #ffdbdb, 0 0 0 #000;
+}
+/*NAV*/
+nav{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	background-color: rgba(255,255,255,0.3);
+	border-bottom: 2px solid rgba(149, 9, 9, 0.8);
+	padding: 9vw 5vw 1vw;
+	width: 80vw;
+	margin: auto;
+}
+nav ul{
+	flex:.8;
+}
+nav ul>li{
+	display: inline-block;
+	margin: 2.5%;
+	font-size: 1.5vw;
+}
+nav>div{
+	flex: 2;
+	justify-content: flex-end;
+	display: flex;
+}
+nav>div:last-of-type{
+	flex:1.5;
+	align-items: center;
+	margin-left: 1vw;
+}
+nav form input{
+	font-size: 1vw;
+	border-radius: 15px;
+	padding: .5vw;
+	border: 1px solid rgba(149, 9, 9, 0.8);
+}
+nav form input[type=submit]{
+	min-width: 100px;
+	border: 2px solid rgba(149, 9, 9, 0.8);
+	border-radius: 15px;
+	background: #FFDAC2;
+}
+nav form input[type=submit]:hover{
+	background: #E3C0AA;
+}
+nav form input[type=submit]:active{
+	background: #FFDAC2;
+}
+/*MAIN*/
+	/*Table*/
+table {
+	float: right;
+	border-collapse: collapse;
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+td, th{
+	padding: 1.5vw 2vw;
+}
+
+tr:nth-child(odd) {
+	background-color: #FFDAC2;
+}
+
+tr:nth-child(even) {
+	background-color: #FFE6C2;
+}
+
+th:first-child {
+	text-align: right;
+	font-weight: bold;
+    padding-right: 0;
+}
+
+	/*/Table*/
+main ul{
+	list-style: none;
+	margin: .1vw 1vw;
+}
+main ul li{
+	padding: 0 0 1vw 0;
+}
+main ul li::before{
+	content: "» ";
+	
+}
+main{
+	background-color: rgba(255,255,255,0.3);
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: top;
+	padding: 1vw 5vw;
+	width: 80vw;
+	margin: auto;
+}
+main>section{
+	flex:1;
+}
+main>section>h2{
+	margin: 1vw 0;
+	text-indent: 1.5vw;
+}
+main>section:nth-of-type(even)>article{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	border:1px solid rgba(149, 9, 9, 0.8);
+
+}
+article>img{
+	flex: 1;
+	border:1px solid rgba(149, 9, 9, 0.8);
+	margin: 1vw;
+}
+/*FOOTER*/
+footer{	
+	background-color: rgba(255,255,255,0.5);
+	display: flex;
+	flex-direction: row-reverse;
+	padding: 2vw 3vw;
+	border-top: 2px solid rgba(149, 9, 9, 0.8);
+}

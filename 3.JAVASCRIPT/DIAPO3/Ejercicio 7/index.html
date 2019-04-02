@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 7</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		//10x5x10cms y 2kg de peso = 6.5
+		//100x20x10cms y 20kg de peso = 122
+		const initPrice = 2;
+		function calcula(){
+			var alt = parseFloat(document.getElementById('alt').value),
+				anch = parseFloat(document.getElementById('anch').value),
+				prof = parseFloat(document.getElementById('prof').value),
+				pes = parseFloat(document.getElementById('pes').value),
+				sizePrice,weightPrice;
+
+			sizePrice = (alt*anch*prof)*0.005;
+			weightPrice = ((pes*1000)/100)*0.1;
+
+
+			result.innerHTML = initPrice+sizePrice+weightPrice+"€";
+		}
+	</script>
+</head>
+<body>
+	<label>Calculadora de Tarifas</label>
+	<br />
+	<label>Altura: </label>
+	<input type="number" id="alt" placeholder="cms" />
+	<br />
+	<label>Anchura: </label>
+	<input type="number" id="anch" placeholder="cms" />
+	<br />
+	<label>Profundidad: </label>
+	<input type="number" id="prof" placeholder="cms" />
+	<br />
+	<label>Peso: </label>
+	<input type="number" id="pes" placeholder="kg" />
+	<br />
+	<button onclick="calcula()">Calcular</button>
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

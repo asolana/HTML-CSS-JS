@@ -1,0 +1,37 @@
+main  h2{
+	padding: 2vw 0;
+}
+
+h3{
+	line-height: 5vw;
+	text-align: center;
+}
+
+hr{
+	line-height: 2vw;
+}
+
+section{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+article{
+	padding: 2vw 0;
+	flex: 1;
+	text-align: center;
+}
+
+article > ul {
+	list-style: none;
+}
+article:nth-child(1){
+	border-right: 1px solid #4a6e78;
+}
+article:nth-child(2){
+	border-left: 1px solid #4a6e78;
+}
+article li{
+	padding: 2vw;
+}

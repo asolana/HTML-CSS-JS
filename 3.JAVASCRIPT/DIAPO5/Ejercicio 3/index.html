@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora de salarios</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora salarial</h1>
+	</header>
+	<main>
+		<label for="sala">Indroduce el salario anterior:</label>
+		<input type="text" id="sala" placeholder="Base" />
+		<span>euros</span>
+		<label for="lvl">Nivel:</label>
+		<select name="lvl" id="lvl">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="other">Otros niveles</option>
+		</select>
+		<output id="oout"></output>
+		<button onclick="calc();">Calcular</button>
+	</main>
+	<footer>&copy;By Me</footer>
+</body>
+</html>
+<!--
+Inicio
+leer salario
+leer nivel
+segun (nivel)hacer
+	caso 1: salario *= 1.3
+	caso 2: salario *= 1.05
+	de otro modo: salario *= 0.93
+fin segun
+escribir salario
+Fin
+-->

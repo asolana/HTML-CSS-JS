@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		const pi = 3.1416;
+		function calcula(){
+			var base = parseFloat(n1.value),
+				altura = parseFloat(n2.value),
+				res = (base * altura) / 2;
+				
+			area.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<label>Introduzca la base:</label>
+	<input type="number" id="n2" placeholder="Base" />
+	<br />
+	<label>Introduzca la altura:</label>
+	<input type="number" id="n1" placeholder="Altura" />
+	<br />
+	<button onclick="calcula()">Calcula</button>
+	<br />
+	<label>Área: </label><span id="area"></span>	
+	<hr /> 
+</body>
+</html>

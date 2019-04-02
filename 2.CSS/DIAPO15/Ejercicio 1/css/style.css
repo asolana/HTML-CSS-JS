@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 80vw;
+	margin: auto;
+	padding: 20px;
+	display: grid;
+	grid-template-areas: 
+		'cabecera cabecera'
+		'lateral principal'
+		'pie pie';
+	grid-gap: 10px;
+}
+@media screen and (max-width: 400px) {
+	body{
+		grid-template-areas: 
+			'cabecera'
+			'lateral'
+			'principal'
+			'pie';
+	}
+	
+}
+header{
+	background-color: #f99;
+	grid-area: cabecera;
+	text-align: center;
+}
+aside{
+	background-color: #99f;
+	grid-area: lateral;
+}
+main{
+	background-color: #9ff;
+	grid-area: principal;
+}
+footer{
+	background-color: #f9f;
+	grid-area: pie;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Ejercicio 1</title>
+	<link rel="stylesheet" href="./css/css.css" />
+	<script src="./js/js.js"></script>
+</head>
+<body>
+	<header>
+		<h1>CSS Filter maker</h1>
+	</header>
+	<nav>
+	</nav>
+	<main>
+		<section>
+			<figure>
+				<img src="./img/hands.jpg" alt="Leonardo DiCaprio">
+				<figcaption></figcaption>
+			</figure>
+		</section>
+		<section>
+			<article>
+				<label for="blr">blur(px)</label><br />
+				<input type="range" min='0' max='100' id='blr' />
+			</article>
+			<article>
+				<label for="brig">brightness(%)</label><br />
+				<input type="range" min='0' max='100' id='brig' />
+			</article>
+			<article>
+				<label for="contr">contrast(%)</label><br />
+				<input type="range" min='0' max='100' id='contr' />
+			</article>
+			<article>
+				<label for="gry">grayscale(%)</label><br />
+				<input type="range" min='0' max='100' id='gry' />
+			</article>
+			<article>
+				<label for="rota">hue-rotate(deg)</label><br />
+				<input type="range" min='1' max='360' id='rota' />
+			</article>
+			<article>
+				<label for="inver">invert(%)</label><br />
+				<input type="range" min='0' max='100' id='inver' />
+			</article>
+			<article>
+				<label for="opaci">opacity(%)</label><br />
+				<input type="range" min='0' max='100' id='opaci' />
+			</article>
+			<article>
+				<label for="satura">saturate(%)</label><br />
+				<input type="range" min='0' max='100' id='satura' />
+			</article>
+			<article>
+				<label for="dshdw">(h,v,b,c)</label><br />
+				<input type="range" min='1' max='360' id='hor' />
+				<input type="range" min='1' max='360' id='ver' />
+				<input type="range" min='1' max='360' id='bl' /><br />
+				<input type="color" min='1' max='360' id='col' />
+			</article>
+			<article>
+				<label for="sep">sepia(%)</label><br />
+				<input type="range" min='0' max='100' id='sep' />
+			</article>
+		</section>
+	</main>
+	<footer>
+		&copy;Me
+	</footer>
+</body>
+</html>

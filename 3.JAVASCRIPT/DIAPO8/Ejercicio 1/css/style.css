@@ -1,0 +1,14 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+figure{
+	margin: auto;
+	width: 50%;
+	overflow: hidden;
+}

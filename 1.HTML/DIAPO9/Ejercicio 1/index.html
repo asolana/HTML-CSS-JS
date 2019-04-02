@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<style type="text/css">
+		section{
+			border:1px solid #5071b8;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 5%;
+			padding: 0 .5em;
+		}
+		input{
+			margin-bottom: 0.4em; 
+		}
+		#form1{
+			width: 350px;
+			height: 434.8px;
+		}
+		#form2{
+			width: 450px;
+			height: 434.8px;
+		}
+
+	</style>
+</head>
+<body>
+	<header></header>
+	<main>
+		<section id="form1">
+			<h1>User Input Form</h1>
+			<form>
+				<fieldset>
+					<legend>Personal Particular:</legend>
+					<label for="txt_user">Name:</label>
+					<input id="txt_user" type="text" name="name" /><br />
+					<label for="txt_pwd">Password:</label>
+					<input id="txt_pwd" type="password" name="pwd" /><br />
+
+					<label>Gender:</label>
+					<input id="r_male" type="radio" name="genero" value="Hombre" />
+					<label for="r_male">Male</label>
+					<input id="r_female" type="radio" name="genero" value="Mujer" />
+					<label for="r_female">Female</label><br />
+					<label for="s_age">Age:</label>
+					<select id="age">
+						<option selected="selected" value="<1">&lt; 1 year old</option>
+						<option value="1>10">1 year old &gt; 10 year old</option>
+						<option value="10>20">10 year old &gt; 20 year old</option>
+						<option value="<20">&gt; 20 year old</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<legend>Languages:</legend>
+					<input id="java" type="checkbox" name="java" value="j" >
+					<label for="java">Java</label>
+					<input id="c++" type="checkbox" name="c++" value="c+" >
+					<label for="c++">C/C++</label>
+					<input id="c#" type="checkbox" name="c#" value="c" >
+					<label for="c#">C#</label>
+				</fieldset>
+				<fieldset>
+					<legend>Instruction</legend>
+					<textarea rows="6" cols="30">Enter your instruction here...</textarea>
+				</fieldset>
+				<button type="submit">SEND</button>
+				<button type="reset">CLEAR</button>
+			</form>
+		</section>
+		<section id="form2">
+			<h3>Formulario estructurado</h3>
+			<form>
+				<fieldset>
+					<legend>Datos personales</legend>
+					<label for="txt_name">Nombre</label><br />
+					<input id="txt_name" type="text" name="name" /><br />
+					<label for="txt_lname">Apellidos</label><br />
+					<input id="txt_lname" type="text" name="lname" /><br />
+					<label for="txt_dni">DNI</label><br />
+					<input id="txt_dni" type="text" name="dni" /><br />
+				</fieldset>
+				<br />
+				<fieldset>
+					<legend>Datos de conexión</legend>
+					<label for="txt_user">Nombre de usuario</label><br />
+					<input id="txt_user" type="text" name="name" /><br />
+					<label for="txt_pwd">Contraseña</label><br />
+					<input id="txt_pwd" type="password" name="pwd" /><br />
+					<label for="txt_dni">Repite la contraseña</label><br />
+					<input id="txt_dni" type="text" name="dni" /><br />
+				</fieldset>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

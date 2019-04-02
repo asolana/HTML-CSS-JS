@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4</title>
+</head>
+<body>
+	<!-- Dia:<input type="numer" id="d" />
+	Mes:<input type="numer" id="m" />
+	Año:<input type="numer" id="y" />
+	Hora:<input type="numer" id="h" />
+	Min:<input type="numer" id="min" />
+	Seg:<input type="numer" id="seg" /> -->
+	Fecha:<input type="date" id='d' />
+	Hora:<input type="time" id='t' step='1' />
+	<button onclick="gofun();">GO!</button>
+	<hr />
+	Dias: <output id='days'></output><br />
+	Tiempo: <output id='time'></output>
+
+	<script>
+		var fin;
+		var intervalo;
+
+		function gofun () {
+			var find = new Date(d.valueAsDate);
+			var finh = new Date(t.valueAsDate);
+			fin = new Date(find.getFullYear(),find.getMonth(), find.getDate(),finh.getHours()-1,finh.getMinutes(),finh.getSeconds(),0);
+			
+
+			intervalo = setInterval(calcular, 500);
+		}
+		
+
+		function calcular () {
+			var ahora = new Date();
+
+			if(ahora>fin){
+				alert('Ya has llegado al tiempo')
+				clearInterval(intervalo);
+			}else{
+				var seg = parseInt((fin-ahora)/1000);
+				days.innerHTML = parseInt(seg/86400);
+
+				var segundos = seg%60;
+				var minutos = parseInt(seg/60)%60;
+				var horas = parseInt(seg/3600)%24;
+
+				if(segundos<10) segundos = '0'+ segundos;
+				if(minutos<10) minutos = '0'+ minutos;
+				if(horas<10) horas = '0'+ horas;
+
+				document.getElementById('time').innerHTML = horas+" : "+minutos+" : "+segundos;
+			}
+			
+			
+
+		}
+		
+
+
+	</script>
+</body>
+</html>

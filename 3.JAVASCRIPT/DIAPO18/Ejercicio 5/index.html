@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<style>
+  div{
+      width: 25%;
+      margin:auto;
+      border: 2px solid #000;
+      border-radius: 7px;
+      text-align: justify;
+      padding: 5px;
+  }
+</style>
+
+<body>
+  <button onclick='rollthedice()'>Roll</button>
+
+  <script>
+    const diceface = ['img/gdice.png',
+                      'img/gdice1.png',
+                      'img/gdice2.png',
+                      'img/gdice3.png',
+                      'img/gdice4.png',
+                      'img/gdice5.png'];
+    var inter;
+    function rollthedice(){
+      var ale = Math.round(Math.random()*5);
+      if(document.images.length == 0){
+        var center = document.createElement('center');
+        var fig = document.createElement('figure');
+        var im = document.createElement('img');
+        im.src = diceface[ale];
+        im.width = 100;
+        im.height = 100;
+        fig.appendChild(im);
+        center.appendChild(fig);
+        document.body.appendChild(center);
+      }else{
+        document.images[0].src = diceface[ale];
+      }
+
+        inter = setInterval(function(){
+          ale = Math.round(Math.random()*5);
+          document.images[0].src = diceface[ale];
+        },200)
+
+        setTimeout(function(){clearInterval(inter);return ale+1;},2000);
+    }
+
+  </script>
+</body>
+
+</html>

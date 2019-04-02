@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Cuanto tarda en adivinar el numero</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<article id="alertBox">
+		<div>
+	        <section><!--Barra superior -->
+	        	<span>AlertBox</span><button onclick="alertBox_hide()">X</button>
+	        </section> 
+	        <section><!--Contenido -->
+	        </section>
+	        <section> <!--Botones -->
+	        </section> 
+	    </div>
+	</article>	
+	<header>
+		<h1>Cuanto tarda en adivinar el numero</h1>
+    
+	</header>
+	<main>
+		<section>
+			<span>Número:</span>
+			<input type="text" id="num" placeholder="1~128" />
+			<button id="gue" onclick="adivinar();">Adivina</button>
+
+			<button id="gue" onclick="alertBox('Mayor o menor','cus1','4'/*numR*/);">Open</button>
+		</section>
+		<section>
+			<output id="res"></output>
+		</section>
+	</main>
+	<footer>&copy;By Me</footer>
+</body>
+</html>

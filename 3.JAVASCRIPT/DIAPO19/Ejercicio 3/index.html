@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      position: relative;
+    }
+    figure{
+      flex: 1;
+    }
+    img{
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <figure><img src="./img/martini.jpg" alt="Coctail Martini" data-name="Martini" data-desc="Compuesto de ginebra con un chorro de vermú"/></figure>
+  <figure><img src="./img/manhattan.jpg" alt="Coctail Manhattan" data-name="Manhattan" data-desc="Cóctel clásico a base de whiskey (de centeno o canadiense) y vermut rojo" /></figure>
+  <figure><img src="./img/bloodymary.jpg" alt="Coctail Bloody Mary" data-name="Bloody Mary" data-desc="Mezcla de vodka especiado y zumo de tomate" /></figure>
+  <figure><img src="./img/margarita.jpg" alt="Coctail Margarita" data-name="Margarita" data-desc="Cóctel mexicano compuesto por tequila, triple seco y jugo de lima" /></figure>
+  <figure><img src="./img/mojito.jpg" alt="Coctail Mojito" data-name="Mojito" data-desc="Cóctel originario de Cuba, compuesto de ron, azúcar, limón,hierbabuena y agua mineral" /></figure>
+  <figure><img src="./img/daiquiri.jpg" alt="Coctail Daiquiri" data-name="Daiquiri" data-desc="Tipo de cóctel hecho a partir de ron blanco y zumo de limón criollo o lima" /></figure>
+  <figure><img src="./img/gintonic.jpg" alt="Coctail Gin Tonic" data-name="Gin Tonic" data-desc="Preparado a base de Ginebra, tónica, hielo y piel de lima" /></figure>
+  <script>
+    for (fig of document.getElementsByTagName('figure')) {
+      fig.addEventListener('click',function(){escalar(this);});
+    }
+    function escalar(it){
+      //Creacion del fondo
+      var figbg = document.createElement('div');
+      figbg.style.width = "100%";
+      figbg.style.height = '100%';
+      figbg.style.backgroundColor = 'rgba(0,0,0,0.3)';
+      figbg.style.position = 'fixed';
+      //Creacion de la figure
+      var newfig = document.createElement('figure');
+      figbg.appendChild(newfig);
+      newfig.style.position = 'fixed';
+      newfig.style.top = '50px';
+      newfig.style.left = ((window.innerWidth/3) - (newfig.clientWidth/2)) + 'px';
+      newfig.style.color = '#fff';
+      newfig.style.textShadow = '1px 1px 1px #ccc';
+      newfig.style.textAlign = 'center';
+      newfig.addEventListener('click',function(){this.parentNode.remove();});
+      //Creacion del titulo
+      var figt = document.createElement('h1');
+      newfig.appendChild(figt);
+      figt.innerHTML = it.firstChild.dataset.name;
+      figt.style.fontSize = '2vw';
+      figt.style.lineHeight = '3vw';
+      //Creacion de la imagen
+      var im = document.createElement('img');
+      newfig.appendChild(im);
+      im.src = it.firstChild.src;
+      im.style.border = '2px solid #cff';
+      im.style.borderRadius = '15px';
+      im.style.padding = '15px';
+      im.style.boxShadow = '5px 4px 1px #1b1a1a9c';
+      //Creacion de la descripcion
+      var figc = document.createElement('figcaption');
+      newfig.appendChild(figc);
+      figc.innerHTML = it.firstChild.dataset.desc;
+      figc.style.fontSize = '1vw';
+      figc.style.lineHeight = '3vw';
+
+      document.body.insertBefore(figbg,document.body.firstChild);
+    }
+  </script>
+</body>
+</html>

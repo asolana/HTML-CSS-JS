@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+<script>
+	function calc(){
+		res.innerHTML = "";
+		var n1 = parseInt(nn1.value),
+			n2 = parseInt(nn2.value);
+
+		if(n1==n2){
+			res.innerHTML = n1;
+		}else{
+			if(n1<n2){
+				for(;n1<=n2;n1++){
+					res.innerHTML += n1 + ", ";
+				}
+			}else if (n2<n1) {
+				for(;n2<=n1;n2++){
+					res.innerHTML += n2 + ", ";
+				}
+			}
+			res.innerHTML = res.innerHTML.substring(0, res.innerHTML.length-2);
+		}		
+	}
+</script>
+</head>
+<body>
+	<main>
+		<input type="number" id="nn1" /><br />
+		<input type="number" id="nn2" /><br />
+		<input type="button" onclick="calc();" value="Calcular" /><br />
+		<output id="res"></output>
+	</main>
+</body>
+</html>

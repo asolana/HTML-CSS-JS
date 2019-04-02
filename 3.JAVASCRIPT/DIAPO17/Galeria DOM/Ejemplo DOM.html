@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+		<title>Ejemplo DOM</title>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+
+		<script>
+			window.onload = function(){
+				//recuperar todas figuras de la galería
+				var figuras = document.getElementById('galeria').getElementsByTagName('figure');
+
+				//ponerles el tratamiento de eventos
+				for(var i=0; i<figuras.length; i++){
+					//al hacer click sobre una figura, se debe mostrar en grande
+					figuras[i].onclick = function(){
+						mostrar(this);
+					}
+				}
+			}
+
+
+			function mostrar(figura){
+				//crea la figura a pantalla completa
+				var figuraGrande = document.createElement('figure');
+				figuraGrande.setAttribute('id','grande');
+
+				//al hacer click en la figura grande, ésta se cerrará
+				figuraGrande.onclick = function(){this.remove();}
+
+				//crear la imagen de dentro de la figura grande
+				var imagen = document.createElement('img');
+				imagen.setAttribute('src', figura.firstElementChild.src);
+				
+				//añadir la imagen a la figura grande
+				figuraGrande.appendChild(imagen);				
+
+
+				//recuperar la información y ponerla en un figcaption
+				var leyenda = document.createElement('figcaption');
+				var lugar = figura.firstElementChild.dataset.lugar;
+				var fecha = figura.firstElementChild.dataset.fecha;
+				leyenda.innerHTML = lugar.toUpperCase()+' ('+fecha+')';
+				figuraGrande.appendChild(leyenda);
+
+				//añadir la figura grande al body
+				document.body.appendChild(figuraGrande);
+			}
+
+			function change (op) {
+				for (it in document.images) {
+					document.images[it].src = op.innerHTML.toLowerCase()+
+					(parseInt(it)+1)+'.png';
+				}
+			}
+
+		</script>
+
+	</head>
+
+	<body>		
+		<h1>Bart's Gallery</h1>	
+
+		<section id="galeria">
+			<figure>
+				<img src="bart1.png" alt="Bart 1" data-lugar="Barcelona" data-fecha="01/01/2019">
+			</figure>
+
+			<figure>
+				<img src="bart2.png" alt="Bart 2" data-lugar="Terrassa" data-fecha="02/01/2019">
+			</figure>
+
+			<figure>
+				<img src="bart3.png" alt="Bart 3" data-lugar="Sabadell" data-fecha="03/01/2019">
+			</figure>
+
+			<figure>
+				<img src="bart4.png" alt="Bart 4" data-lugar="Martorell" data-fecha="04/01/2019">
+			</figure>
+
+			<figure>
+				<img src="bart5.png" alt="Bart 5" data-lugar="Barberà" data-fecha="05/01/2019">
+			</figure>
+
+			<figure>
+				<img src="bart6.png" alt="Bart 6" data-lugar="Molins de Rei" data-fecha="06/01/2019">
+			</figure>
+		</section>  
+     	<buton onclick='change(this)'>Bart</buton>
+     	<buton onclick='change(this)'>Stewie</buton>
+     	<buton onclick='change(this)'>Roger</buton>
+		<footer>
+		</footer>
+	
+
+</body></html>

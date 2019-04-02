@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+	color:#454545;
+	font-size: 1vw;
+}
+a{text-decoration: none;}
+h1{
+	font-size: 2.5vw;
+	text-shadow: 2px 1px 1px #00737D;
+}
+h4{
+	padding:  5% 0 2.5% 0;
+	font-size: 1.5vw;
+}
+/*LAYOUT*/
+body{
+	text-align: center;
+	width: 90vw;
+	margin:auto;
+	display: grid;
+	grid-template-columns: 20% 20% auto;
+	grid-template-areas: 
+	'he he he'
+	'na na na'
+	'ma ma ma'
+	'ma ma ma'
+	'fo fo fo';
+}
+header{grid-area: he;}
+nav{grid-area: na;}
+main{
+	grid-area: ma;
+	display: grid;
+	grid-template-columns: 25% auto 30%;
+	grid-template-areas: 
+	'im in in'
+	'im ga ga'
+	'op op es';
+}
+aside{grid-area: im;}
+main>section:first-of-type{grid-area: in;}
+main>section:nth-of-type(2){grid-area: ga;}
+main>section:nth-last-of-type(2){grid-area: op;}
+main>section:last-of-type{grid-area: es;}
+footer{
+	grid-area: fo;
+	display: grid;
+	grid-template-columns: 30% auto 30%;
+	grid-gap: 5px;
+}
+/*END LAYOUT*/
+body{
+	border: 3px solid #009aa7;
+}
+header{
+	padding: 3%;
+}
+nav{
+	border: 0px groove #00737D;
+	border-top-width: 3px;
+	border-bottom-width: 3px;
+	display: flex;
+	position: sticky;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+nav>a{
+	flex: 1;
+	padding: 1%;
+}
+main{
+	background-image: url('../img/hBg.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+main>aside{
+	overflow: hidden;
+	background-image: url('../img/designModel2.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+/*informacion*/
+aside,main>section:nth-of-type(2){
+	border-bottom: 3px solid #009aa7;
+}
+main>section:first-of-type p{
+	text-align: justify;
+	padding: 0 5%;
+	line-height: 1.5vw;
+	color: #000;
+}
+/*galeria*/
+main>section:nth-of-type(2)>article{
+	display: flex;
+	flex-wrap: wrap;
+}
+main>section:nth-of-type(2)>article img{
+	flex: 1;
+	width: 50%;
+	min-width: 75px;
+}
+/*opiniones*/
+main>section:nth-of-type(3){
+	padding: 0 10%;
+}
+
+main>section:nth-of-type(3)>article{
+	margin-top: 4%;
+	padding: 1% 5%;
+	border-radius: 25px;
+	text-align: left;
+	box-shadow: -1px -1px 2px #000;
+}
+
+main>section:nth-of-type(3)>article h5{
+	padding: 2% 5%;
+	letter-spacing: .3vw;
+	color: #000;
+}
+main>section:nth-of-type(3)>article:nth-of-type(even){
+	box-shadow: 1px -1px 2px black;
+}
+main>section:nth-of-type(3)>article:nth-of-type(even) h5{
+	text-align: right;
+}
+/*caracteristicas*/
+main>section:last-of-type>ul{
+	padding: 5% 15%;
+	list-style: none;
+	text-align: left;
+}
+main>section:last-of-type li{
+	padding: 2%;
+	text-shadow: 1px 1px 1px #56DEE9;
+}
+footer{
+	padding: 3%;
+	margin: auto;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<style type="text/css">
+		main{
+			text-align: center;
+		}
+		form{
+			display: inline-block;
+			text-align: left;
+		}
+		label{
+			display: inline-block;
+			min-width: 60px;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<main>
+		<form>
+			<fieldset>
+				<legend>Datos:</legend>
+				<label for="txt_user">Usuario:</label>
+				<input id="txt_user" type="text" name="name" /><br />
+				<label for="txt_pwd">Clave:</label>
+				<input id="txt_user" type="password" name="pwd" /><br />
+
+				<input id="r_h" type="radio" name="genero" value="Hombre" />
+				<label for="r_h">Hombre </label>
+				<input id="r_m" type="radio" name="genero" value="Mujer" />
+				<label for="r_m">Mujer </label>
+				<input id="r_ns" type="radio" name="genero" value="No se" checked="checked"/>
+				<label for="r_ns">No lo se </label>
+
+
+			</fieldset>
+			<fieldset>
+				<legend>Vehículo:</legend>
+				<input id="c_b" type="checkbox" name="bici" value="b" >
+				<label for="c_b">Tengo bici</label><br />
+				<input id="c_c" type="checkbox" name="coche" value="c" >
+				<label for="c_m">Tengo coche</label><br />
+				<input id="c_m" type="checkbox" name="moto" value="m" >
+				<label for="c_m">Tengo moto</label><br />
+			</fieldset>
+			<button type="submit">Enviar</button> 
+			<input type="reset" name="Borrar" value="Borrar">
+		</form>
+	</main>
+</body>
+</html>

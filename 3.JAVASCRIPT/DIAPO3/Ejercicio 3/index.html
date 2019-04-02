@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		//(°C × 9 / 5) + 32 = 32 °F
+		//(°F − 32) × 5 / 9 = -17,78 °C
+		function calcula(){
+			var grad = parseFloat(n1.value),
+				res = 0;
+				if(document.getElementById("grados").value != 'F'){
+					res = (grad*9/5)+32 +"º F";
+				}else{
+					res = (grad-32)*5/9 +"º C";
+				}
+			result.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<label>Convertidor de temperatura</label>
+	<br />
+	<select id="grados"/>
+		<option value="C">to ºF</option>
+		<option value="F">to ºC</option>
+	</select>
+	<input type="number" id="n1" placeholder="º" />
+	<button onclick="calcula()">Calcula</button>
+	<br />
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

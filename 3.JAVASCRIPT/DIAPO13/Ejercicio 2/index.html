@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Ejemplo 1</title>
+	<style>
+		*{
+			background-color: #000;
+			color: #fff;
+			font-size: 18vw;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<span id='horas'></span>
+	<span id='minutos'></span>
+	<span id='segundos'></span>
+<script>
+	function reloj () {
+		var ahora = new Date();
+		var seg = parseInt((ahora)/1000);
+
+		var segundos = ahora.getSeconds();
+		var minutos = ahora.getMinutes();
+		var horas = ahora.getHours();
+
+		if(segundos<10) segundos = '0'+ segundos;
+		if(minutos<10) minutos = '0'+ minutos;
+		if(horas<10) horas = '0'+ horas;
+
+		document.getElementById('segundos').innerHTML = segundos;
+		document.getElementById('minutos').innerHTML = minutos + ' : ';
+		document.getElementById('horas').innerHTML = horas + ' : ';
+	}
+	setInterval(reloj, 500);
+</script>
+</body>
+</html>

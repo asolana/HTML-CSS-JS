@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+	<script>
+		function colorear (item, hex) {
+			hex.includes('#')? item.style.backgroundColor = hex : item.style.backgroundColor = "#"+hex;
+		}
+	</script>
+</head>
+<body>
+	<div onclick="colorear(this, '#0f0');">
+		Colorear Esto
+	</div>
+	<div onclick="colorear(document.body, '00ca0f')">
+		Colorear el body
+	</div>
+	<div onclick="colorear(document.body, '#fff');colorear(document.getElementsByTagName('div')[0], 'fff')">
+		Resetear
+	</div>
+</body>
+</html>

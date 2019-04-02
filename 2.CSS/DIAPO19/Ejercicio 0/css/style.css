@@ -1,0 +1,39 @@
+div.cubo{
+	position: relative;
+	transform-style: preserve-3d;
+	margin: 50px;
+	width: 200px;
+	height: 200px;
+	transform: rotateX(40deg) rotateY(40deg);
+}
+div.cara{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	outline: 1px solid black;
+	transition: 1s;
+}
+div.cubo:target .cara.front{
+	background-color: rgba(255, 0, 255, 0.5);
+	transform: translateZ(-100px);
+}
+div.cubo:target .cara.back{
+	background-color: rgba(255, 255, 0, 0.5);
+	transform: rotateY(180deg) translateZ(-100px);
+}
+div.cubo:target .cara.left{
+	background-color: rgba(0, 255, 0, 0.5);
+	transform: rotateY(90deg) translateZ(-100px);
+}
+div.cubo:target .cara.right{
+	background-color: rgba(255, 0, 0, 0.5);
+	transform: rotateY(-90deg) translateZ(-100px);
+}
+div.cubo:target .cara.top{
+	background-color: rgba(0, 0, 255, 0.5);
+	transform: rotateX(-90deg) translateZ(-100px);
+}
+div.cubo:target .cara.bottom{
+	background-color: rgba(125, 125, 125, 0.5);
+	transform: rotateY(90deg) translateZ(-100px);
+}

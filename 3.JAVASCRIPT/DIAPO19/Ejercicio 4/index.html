@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <h1><center>Juego de dados</center></h1>
+  </header>
+  <main>
+    <section>
+      <article>
+        <h2>Estadísticas</h2>
+        <label>Monedas:</label><output id='monOut'>10</output>
+        <label>Turnos:</label><output id='turnOut'></output>
+        <label>Aciertos:</label><output id='okOut'></output>
+        <label>Errores:</label><output id='notOut'></output>
+      </article>
+      <hr />
+      <article>
+        <h2>Jugada</h2>
+          <label>Apuesta:</label><select name="betSelect"></select>
+        <input type="radio" name='betRadio' value="mas" id='masRadio' checked/><label for='masRadio'>Más de 7</label>
+        <input type="radio" name='betRadio' value="menos" id='menosRadio'/><label for='menosRadio'>Menos de 7</label>
+        <button id='playBtn' onclick="tirar();">Jugar</button>
+      </article>
+    </section>
+    <section>
+      <article>
+        <h2>Resultados</h2>
+        <figure>
+          <img src="./img/d6.png" id='0' />
+        </figure>
+        <figure>
+          <img src="./img/d6.png" id='1' />
+        </figure>
+        <output name="resOut"></output>
+        <output name="resBetOut"></output>
+        <output name="gameoverOut"></output>
+      </article>
+    </section>
+  </main>
+  <script type="text/javascript" src='./js/js.js'>
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+	body{
+		display: grid;
+		grid-template-columns: repeat(6,auto);
+	}
+	@media screen and (max-width: 1000px) {
+		body{
+			grid-template-columns: repeat(3,auto);
+		}
+	}
+	figure{
+		border: 1px solid #000;
+		text-align: center;
+		padding: 4%;
+	}
+	figure:nth-child(1)>img{
+		opacity: .5;
+	}
+</style>
+<body>
+	<figure>
+		<img src="" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<figure>
+		<img src=""" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<figure>
+		<img src=""" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<figure>
+		<img src="" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<figure>
+		<img src="" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<figure>
+		<img src="" alt="">
+		<figcaption></figcaption>
+	</figure>
+	<script>
+		var rndlst = [Math.random().toFixed(2)*1000,
+						Math.random().toFixed(2)*1000,
+						Math.random().toFixed(2)*1000,
+						Math.random().toFixed(2)*1000,
+						Math.random().toFixed(2)*1000,
+						Math.random().toFixed(2)*1000];
+		for (item in document.body.children) {
+			var it = document.body.children[item];
+			if (it.nodeName == "FIGURE") {
+				console.log(it.firstElementChild.src = "https://picsum.photos/200/300/?id="+rndlst[item]);
+			}
+		}
+	</script>
+</body>
+</html>

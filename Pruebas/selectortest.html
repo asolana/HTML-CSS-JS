@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TRYSELECTOR</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+		/*RESETS*/
+		*{
+			margin: 0;
+			padding: 0;
+			color: #FFF;
+		}
+		a{
+			text-decoration: none;
+			color: #FFF;
+		}
+		/*BACKGROUND*/
+		video {
+  			position: fixed;
+  			bottom: 0;
+  			min-width: 100vw;
+  			z-index: -1;
+		}
+		/*HEADER*/
+		header:first-child{
+			background-color: #5E0085;
+			padding: 5vw 0 3vw;
+			color: #FFF;
+			text-align: center;
+		}
+		/*NAV*/
+		ul:only-of-type{
+			background-color: #5E0085;
+			direction: rtl;
+		}
+		ul:first-child>li{
+			padding: 1.5vw 2.5vw 1vw 3.5vw;
+			display: inline-block;
+		}
+		li:nth-of-type(even){
+			background-color: #9505D0;
+		}
+		li:nth-of-type(even):hover{
+			box-shadow: 0 -1vw 0 0 #520074 inset;
+		}
+		li:nth-of-type(odd):hover{
+			box-shadow: 0 -1vw 0 0 #B400FF inset;
+		}
+		/*MAIN*/
+		/*FOOTER*/
+		footer{
+			background: #5E0085;
+			text-align: right;
+		}
+		span:only-child::after{
+			display: inline-block;
+			color: #FFF;
+			margin: 5vw 2vw 1vw;
+			line-height: 2vw;
+			font-variant: small-caps;
+			font-size: x-large;
+			content: 'By Aitor';
+		}
+	</style>
+</head>
+<body>
+	
+	<header>
+		<h1>TITULO PRINCIPAL</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="">NavItem1</a></li>
+			<li><a href="">NavItem2</a></li>
+			<li><a href="">NavItem3</a></li>
+			<li><a href="">NavItem4</a></li>
+			<li><a href="">NavItem5</a></li>
+			<li><a href="">NavItem6</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section>
+			<article>
+				<img src="https://picsum.photos/400/600/?gravity=east" alt="" />
+				<p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla maiores voluptatibus, expedita. Dolor quia ex sapiente magnam non ad iste harum, consequatur eos laudantium aperiam quidem, reprehenderit impedit tempora eligendi?</p>
+				<p>2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe veritatis ex velit asperiores molestiae ab veniam quia totam, quibusdam amet harum nemo incidunt, delectus ipsam aut maiores nesciunt dolores autem.</p>
+				<p>3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ipsum repellendus iste reiciendis, eligendi assumenda. Quam non similique, nihil et, doloremque adipisci minus, modi numquam unde, natus id placeat quo.</p>
+				<p>4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nisi enim laboriosam, delectus numquam dolorem optio quisquam, ratione voluptatem assumenda voluptas explicabo obcaecati, velit aliquid voluptates dicta maiores aspernatur! Sapiente?</p>
+			</article>
+		</section>
+	</main>
+	<footer>
+		<span></span>
+	</footer>
+	<video  autoplay muted loop id="bgVid">
+		<source src="imgselectorestest/overlay.mp4" type="video/mp4">
+	</video>
+</body>
+<script>
+	var vid = document.getElementById("bgVid");
+	vid.playbackRate = 0.1; 
+</script>
+</html>

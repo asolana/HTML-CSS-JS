@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Miriam Valera Vivancos</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/portfolioStyle.css">
+	<script src="../js/js.js"></script>
+</head>
+<body>
+	<header>
+		<figure>
+			<a href="index.html"><img src="../img/miriam-valera-logo.png" alt="Miriam Valera Logo" title="Miriam Valera" />
+			<h1>Miriam Valera</h1>
+			<h2>Desarrolladora</h2>
+			</a>
+		</figure>
+		<figure id="sectorfig" onclick='switchProf();'><img src="../img/massage-vector2.png" alt="Masaje vector" title="Quiromasajes" />
+		</figure>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="../index.html#inicio">Inicio</a></li>
+			<li><a href="../index.html#conocimientos">Conocimientos</a>
+				<ul>
+					<li><a href="../index.html#conocimientos">HTML5</a></li>
+					<li><a href="../index.html#conocimientos">CSS3</a></li>
+					<li><a href="../index.html#conocimientos">JS</a></li>
+				</ul>
+			</li>
+			<li><a href="../pages/portfolio.html">Portfolio</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h2>Portfolio</h2>
+		<section>
+			<script>
+				/*Listado de los proyectos situados en pages/pf y de su miniatura */
+				const pf = [['../pages/pf/pf1/index.html','../img/imgtest.png','Titulo 1'],
+										['../pages/pf/pf2/index.html','../img/imgtest.png','Titulo 2'],
+										['../pages/pf/pf3/index.html','../img/imgtest.png','Titulo 3'],
+										['../pages/pf/pf2/index.html','../img/imgtest.png','Titulo 4'],
+										['../pages/pf/pf1/index.html','../img/imgtest.png','Titulo 5'],
+										['../pages/pf/pf3/index.html','../img/imgtest.png','Titulo 6']];
+				for (var i = 0; i < pf.length; i++) {
+					var art = document.createElement('article');
+					var fig = document.createElement('figure');
+					var figc = document.createElement('figcaption');
+					var im = document.createElement('img');
+					im.src = pf[i][1];
+					im.dataset.ref = pf[i][0];
+					im.dataset.titulo = pf[i][2];
+					im.addEventListener('click', function(){open(this.dataset.ref,'_blank');});
+					fig.appendChild(im);
+					figc.textContent = im.dataset.titulo;
+					fig.appendChild(figc);
+					art.appendChild(fig);
+					document.body.getElementsByTagName('section')[0].appendChild(art);
+				}
+			</script>
+		</section>
+	</main>
+	<footer>
+		<div>
+			<figure><img src="" alt=""></figure>
+			<figure><img src="" alt=""></figure>
+			<figure><img src="" alt=""></figure>
+			<figure><img src="" alt=""></figure>
+			<figure><img src="" alt=""></figure>
+		</div>
+	</footer>
+</body>
+</html>
+
+<!--
+SEO
+
+
+
+ -->

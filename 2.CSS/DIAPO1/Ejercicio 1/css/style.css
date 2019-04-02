@@ -1,0 +1,36 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+p{
+	margin-bottom: 10px;
+}
+html{
+	background-color: #FF00F0;
+}
+body{
+	font-family: arial;
+	margin: 20px auto 20px auto;
+	padding: 20px;
+	width: 80%;
+	background-color: #0f0;
+	border-radius: 20px;
+	box-shadow: 2px 2px 2px #5F5F5F;
+}
+h1, h2{
+	color: #F00;
+	text-shadow: 2px 2px 2px ##9000FF;
+}
+figure{
+	padding: 10px;
+	background-color: #00F;
+}
+figure img{
+	width: 100%;
+}
+figure:hover{
+	
+h1{
+	text-align: center;
+	color: #00FF00;
+}

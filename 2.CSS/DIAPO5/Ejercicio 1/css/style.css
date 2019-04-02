@@ -1,0 +1,8 @@
+:root{
+	color: #F00;
+	background-color: #00f;
+	background-image: url('../img/cactus.png'),url('../img/cactus3.png'), url('../img/cactus2.png'),url('../img/moto.png'), url('../img/sun.png'), url('../img/desert.jpg');
+	background-size: 10%, 20%, 10%, 20%, 10%, 100%;
+	background-position: right -180%, center -172.8%, 40% -462.5%, left -160%, 90% -40%, top;
+	background-repeat: no-repeat; 
+}

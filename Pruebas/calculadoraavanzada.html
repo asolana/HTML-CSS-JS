@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculador avanzada</title>
+	<style>
+		*{padding: 0; margin: 0;font-size: 2vw;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			display: flex;
+		}
+		div{
+			border: 1px solid #000;
+			border-radius: 0 15px 15px 0;
+			align-self: center;
+			padding: 2vw .5vw;
+		}
+		div:first-of-type{
+			width: calc(200px + 20%);
+			border-radius: 15px 0 0 15px;
+			display: grid;
+			grid-gap: 10px;
+			justify-content: center;
+			grid-template-columns: auto auto auto auto;
+		}
+		div:last-of-type{
+			border-width: 0;
+			text-align: left;
+			margin: 0 0 auto 0;
+		}
+		input{
+			width: 100%;
+			grid-column: 1/5;
+			margin: 1vw 0 1vw -.5vw;
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+		}
+		button{
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+			border: 2px outset #000;
+		}
+		button:hover{
+			background-color: #909090;
+		}
+		button:active{
+			background-color: #E2E2E2;
+		}
+		button[id=clear]{
+			grid-column: 1/3;
+		}
+		button[id=adds]{
+			grid-row: 4/6;
+			grid-column: 4/5;
+		}
+		button[id=equal]{
+			grid-column: 3/5;
+			grid-row: 6/7;
+		}
+	</style>
+	<script>
+		var fstcalc = true;
+		document.addEventListener('keypress', function (e){
+			//Numeros
+			if(e.which>=48 && e.which<=58){
+				document.getElementById('inOperacion').value += e.key;
+			}
+			//Operadores
+			if(e.which == 42 || e.which == 43 || e.which == 45 || e.which == 46 || e.which == 47){
+				setOperator(e.key);
+			}
+			if(e.which == 13){
+				calc();
+			}
+			//SUMA 43
+			//RESTA 45
+			//MULTIPLICACION 42 
+			//DIVISION 47
+			//COMA 46
+			//Enter 13
+		});
+		document.addEventListener('keydown',function (e){
+			//Eliminar texto
+			if(e.keyCode == 46 || e.which == 27 || e.which == 8){
+				document.getElementById('inOperacion').value = null;
+			}
+
+		});
+		function setOperator(val){
+			var inp = document.getElementById('inOperacion').value;
+			//Comprobar si es el primer introducido
+			if(inp){
+				//Comprobar si el ultimo caracter no es numerico
+				if(isNaN(parseInt(inp[inp.length-1]))){
+					document.getElementById("inOperacion").value = document.getElementById("inOperacion").value.substring(0, [inp.length-1]) + val;
+				}else{
+					document.getElementById("inOperacion").value += val;
+				}
+			}	
+		}
+		function calc(){
+			if(fstcalc){
+				fstcalc = false;
+				res.style.borderWidth = "1px";
+				res.style.borderLeftWidth = 0;
+			}
+			var inp = document.getElementById('inOperacion').value;
+			var icount = 0, temp = [0];
+			//Bucle para separar y convertir numeros de operadores
+			for (var i = 0; i < inp.length; i++) {
+				if(!isNaN(inp[i]) || inp[i] == '.'){
+					temp[icount] += inp[i];
+				}else{
+					temp[icount] = parseFloat(temp[icount]);
+					icount++;
+					temp[icount] = inp[i];
+					icount++;
+					//El siguiente caracter sera numerico
+					temp[icount] = 0;
+				}
+			}
+
+			temp[icount] = parseFloat(temp[icount]);
+			//Comprobar si la operacion contiene multipliaciones
+			while(temp.includes('*')){
+				icount = temp.indexOf('*');
+				temp[icount] = temp[icount-1] * temp[icount+1];
+				temp.splice(icount+1,1);
+				temp.splice(icount-1,1);
+			}
+			//Comprobar si la operacion contiene divisiones
+			while(temp.includes('/')){
+				icount = temp.indexOf('/');
+				temp[icount] = temp[icount-1] / temp[icount+1];
+				temp.splice(icount+1,1);
+				temp.splice(icount-1,1);
+			}
+			//Comprobar si la operacion contiene sumas
+			while(temp.includes('+')){
+				icount = temp.indexOf('+');
+				temp[icount] = temp[icount-1] + temp[icount+1];
+				temp.splice(icount+1,1);
+				temp.splice(icount-1,1);
+			}
+			//Comprobar si la operacion contiene sumas
+			while(temp.includes('-')){
+				icount = temp.indexOf('-');
+				temp[icount] = temp[icount-1] - temp[icount+1];
+				temp.splice(icount+1,1);
+				temp.splice(icount-1,1);
+			}
+
+
+			res.innerHTML += "<span>" +inp+" = "+temp[0].toFixed(2)+"<br />";
+			document.getElementById("inOperacion").value = "";
+		}
+	</script>
+</head>
+<body >
+	<div>
+		<input type="text" id="inOperacion" readonly />
+		<button id="clear" onclick="document.getElementById('inOperacion').value = null;">C</button>
+		<button id="div" onclick="setOperator(this.innerHTML);">/</button>
+		<button id="mul" onclick="setOperator(this.innerHTML);">*</button>
+		<button id="adds" onclick="setOperator(this.innerHTML);">+</button>
+		<button id="equal" onclick="calc();">=</button>
+		<button id="9" onclick="document.getElementById('inOperacion').value += this.innerHTML;">9</button>
+		<button id="8" onclick="document.getElementById('inOperacion').value += this.innerHTML;">8</button>
+		<button id="7" onclick="document.getElementById('inOperacion').value += this.innerHTML;">7</button>
+		<button id="subs" onclick="setOperator(this.innerHTML);">-</button>
+		<button id="6" onclick="document.getElementById('inOperacion').value += this.innerHTML;">6</button>
+		<button id="5" onclick="document.getElementById('inOperacion').value += this.innerHTML;">5</button>
+		<button id="4" onclick="document.getElementById('inOperacion').value += this.innerHTML;">4</button>
+		<button id="3" onclick="document.getElementById('inOperacion').value += this.innerHTML;">3</button>
+		<button id="2" onclick="document.getElementById('inOperacion').value += this.innerHTML;">2</button>
+		<button id="1" onclick="document.getElementById('inOperacion').value += this.innerHTML;">1</button>
+		<button id="0" onclick="document.getElementById('inOperacion').value += this.innerHTML;">0</button>
+		<button id="coma" onclick="setOperator(this.innerHTML);">.</button>
+	</div>
+	<div id="res"></div>
+</body>
+</html>

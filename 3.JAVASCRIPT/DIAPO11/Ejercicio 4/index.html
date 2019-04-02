@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+<body>
+	<h1>Fibonacci</h1>
+	<label for="len">La cantidad de numeros de fibbonacci:</label><input type="text" id='len' oninput="calcularFibo()"/><output id="fiboout"></output>
+
+	<script>
+		function calcularFibo() {
+			fiboout.value = '';
+			if(parseInt(len.value)>2 && !isNaN(parseInt(len.value))){
+				var fibo = [1,1]
+				for (var i = 2; i <= len.value; i++) {
+					fibo.push(fibo[i-1]+fibo[i-2]);
+				}
+				fiboout.value = fibo.toString();
+			}
+		}
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<style>
+  div{
+      width: 25%;
+      margin:auto;
+      border: 2px solid #000;
+      border-radius: 7px;
+      text-align: justify;
+      padding: 5px;
+  }
+  figure{
+    display: inline-block;
+  }
+</style>
+
+<body>
+  <button onclick='rollthedice(this);'>Roll</button>
+
+  <script>
+    const diceface = ['img/gdice0.png',
+                      'img/gdice1.png',
+                      'img/gdice2.png',
+                      'img/gdice3.png',
+                      'img/gdice4.png',
+                      'img/gdice5.png'];
+    var inter;
+    function rollthedice(boton){
+      clearInterval(inter);
+      var ale = Math.round(Math.random()*5);
+      var fig = document.createElement('figure');
+      var im = document.createElement('img');
+      if(document.body.firstChild.tagName != "CENTER"){
+        var center = document.createElement('center');
+        document.body.insertBefore(center,document.body.firstChild);
+      }
+      if(document.images.length < 5){
+        im.src = diceface[1];
+        inter = setInterval(function(){
+          ale = Math.round(Math.random()*5);
+          im.src = diceface[ale];
+        },200);
+        im.width = 100;
+        im.height = 100;
+        fig.appendChild(im);
+        document.body.firstChild.insertBefore(fig, document.body.firstChild.firstChild);
+        if(document.images.length == 5){
+          boton.innerHTML = 'Ver figura';
+        }
+      }else{
+
+        if(boton.innerHTML == 'Try Again'){
+          boton.innerHTML = 'Roll';
+          Array.from(document.images).forEach(function(e){e.remove();})
+        }
+
+        if(boton.innerHTML == 'Ver figura'){
+          calcularFigura();
+          boton.innerHTML = 'Try Again';
+        }
+      }
+      setTimeout(function(){clearInterval(inter);},2000);
+    }
+
+    function calcularFigura(){
+      var res = [];
+      for (it of document.images) {
+        res.push(it.src.substr(it.src.lastIndexOf('.')-1,1));
+      }
+      console.log(res);
+      // TODO: Hacer comprobaciones;
+    }
+
+  </script>
+</body>
+
+</html>

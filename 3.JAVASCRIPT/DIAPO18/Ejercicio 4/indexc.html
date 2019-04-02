@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1</title>
+</head>
+<style>
+  div {
+    width: 25%;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 7px;
+    text-align: justify;
+    padding: 5px;
+  }
+</style>
+
+<body>
+  <div>Este es un texto, pasa el ratón por encima.</div>
+
+  <script>
+    for (div of document.getElementsByTagName('div')) {
+      div.addEventListener('mouseenter', function(e) {
+        newdiv(this,e);
+      });
+      div.addEventListener('mouseleave', function(e) {
+        newdiv(this,e);
+      });
+    }
+
+    function newdiv(d,e) {
+      if(e.type === 'mouseenter'){
+        var np = document.createElement('div');
+        np.appendChild(document.createTextNode('Pasaste el raton'));
+        d.parentNode.appendChild(np);
+      }else if(e.type === 'mouseleave'){
+        d.parentNode.removeChild(d.parentElement.lastChild);
+      }
+    }
+  </script>
+</body>
+
+</html>

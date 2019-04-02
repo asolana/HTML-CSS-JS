@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tipo de triangulo</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Tipo de triangulo</h1>
+	</header>
+	<main>
+		<section>
+			<h3>Lados del triangulo</h3>
+			<label for="cateto1">Cateto 1:</label>
+			<input type="text" id="cateto1"/>
+			<label for="cateto2">Cateto 2:</label>
+			<input type="text" id="cateto2"/>
+			<label for="hipotenusa">Hipotenusa:</label>
+			<input type="text" id="hipotenusa" />
+			<button onclick="verificar();">Verificar</button>
+		</section>
+		<section>
+			<img id="resimg" src="" />
+			<output id="res"></output>
+		</section>
+	</main>
+	<footer>&copy;By Me</footer>
+</body>
+</html>
+
+<!-- funcion verificar
+	leer ca1
+	leer ca2
+	leer hipotenusa
+
+	si ((ca1 mas ca2 es mayor a hipotenusa) y (ca1 mas hipotenusa es mayor a ca2) y (ca2 mas hipotenusa es mayor a ca1) entonces
+		si ca1 es igual a ca2 y ca2 es igual a hipotenusa entonces
+			escribir imagen equilatero
+			escribir equilatero
+		sino
+			si ca1 es igual a hipotenusa o ca2 es igual a hipotenusa o ca1 es igual a ca2 entonces
+				escribir imagen isosceles
+				escribir isosceles
+			sino
+				escribir imagen escaleno
+				escribir escaleno
+			fin si
+		fin si
+	sino
+		escribir imagen nula
+		escribir no es un triangulo
+	fin si
+fin funcion -->

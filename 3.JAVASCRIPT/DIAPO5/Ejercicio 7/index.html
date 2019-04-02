@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora de notas</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora de notas</h1>
+		<span>Para calcular el resultado de los test</span>
+	</header>
+	<main>
+		<section>
+			<h3>Entrada de datos</h3>
+			<span>Parámetros</span>
+			<label for="ques">Preguntas:</label>
+			<input type="text" id="ques"/>
+			<label for="desc">Descuento por error:</label>
+			<select name="desc" id="desc">
+				<option value="0">0%</option>
+				<option value="25">25%</option>
+				<option value="33">33%</option>
+				<option value="50">50%</option>
+				<option value="66">66%</option>
+				<option value="75">75%</option>
+				<option value="100">100%</option>
+			</select>
+			<span>Resultados</span>
+			<label for="buena">Aciertos:</label>
+			<input type="text" id="buena"/>
+			<label for="mala">Errores:</label>
+			<input type="text" id="mala" />
+			<button onclick="calc();">Calcular</button>
+		</section>
+		<section>
+			<output id="outbuenas">Aciertos: </output>
+			<output id="outmalas">Errores:</output>
+			<output id="outnoans">No Contestadas: </output>
+			<output id="outnota">Nota sin descontar: </output>
+			<output id="outnota10">Final sobre 10: </output>
+			<outpu id="outtext"></output>
+		</section>
+	</main>
+	<footer>&copy;By Me</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<label>Numero 1</label><input type="number" id="n1">
+	<label>Numero 2</label><input type="number" id="n2">
+	<label>Numero 3</label><input type="number" id="n3">
+	<label>Numero 4</label><input type="number" id="n4">
+	<label>Numero 5</label><input type="number" id="n5">
+	<button onclick="getArr()">Recoger Números</button><br />
+	<output id="arrTxt"></output>
+	<hr />
+	<input type="number" id='porpush'><button onclick="arr.push(porpush.value);porpush.value = '';showArr();">Add por Push</button><br /><hr />
+	<button onclick="positivos()">Possitivo</button>
+	<button onclick="negativos()">Negativo</button>
+	<button onclick="pares()">Pares</button>
+	<button onclick="impares()">Impares</button>
+</body>
+<script>
+	var arr = [];
+	var a;
+	function getArr() {
+		
+		for(o of document.getElementsByTagName('input')){
+			if(Boolean(o.value) && o.id != 'porpush'){
+				arr.push(o.value);
+				o.value = '';
+			} 
+		}
+		showArr();
+	}
+	function showArr () {
+		arrTxt.innerHTML = 'Estas trabajando con: ' + arr.toString().bold();
+	}
+	function positivos () {
+		var possitive = 0;
+		for(o of arr){
+			if(parseInt(o) > 0) possitive++;
+		}
+		alert('Hay '+ possitive + ' numeros positivos');
+	}
+	function negativos () {
+		var negative = 0;
+		for(o of arr){
+			if(parseInt(o) < 0) negative++;
+		}
+		alert('Hay '+ negative + ' numeros negativos');
+	}
+	function pares () {
+		var odd = 0;
+		for(o of arr){
+			if(parseInt(o) % 2 == 0) odd++;
+		}
+		alert('Hay '+ odd + ' numeros pares');;
+	}
+	function impares () {
+		var even = 0;
+		for(o of arr){
+			if(parseInt(o) % 2 != 0) even++;
+		}
+		alert('Hay '+ even + ' numeros impares');;
+	}
+</script>
+</html>

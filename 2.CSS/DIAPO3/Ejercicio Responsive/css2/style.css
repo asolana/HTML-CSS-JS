@@ -1,0 +1,20 @@
+#wrap{
+	width: 90vw;
+	margin: auto;
+	text-align: center;
+	font-size: 1vw;
+}
+header,nav,main,footer{
+	border: .2em solid #000;
+	margin: .1vw;
+}
+nav{
+	display: inline-block;
+	padding: 1vw;
+	width: 15%;
+}
+main{
+	display: inline-block;
+	padding: 1vw;
+	width: 78.8%;
+}

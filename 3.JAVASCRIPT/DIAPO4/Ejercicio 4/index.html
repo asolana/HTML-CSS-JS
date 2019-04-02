@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Diferencia en meses</title>
+	<style>
+		*{padding:0;margin:0;}
+		body{
+			width: 100vw;
+		}
+		header,main {
+			text-align: center;
+			width: 50%;
+			margin: auto;
+			border: 1px solid #000;
+			margin: .5vw;
+			padding: 3vw;
+		}
+		h1{font-size: 3vw;}
+		h1+span{
+			font-size: 2vw;
+			font-weight: bold;
+		}
+		main{
+			display: grid;
+			grid-template-columns: auto auto;
+			justify-content: center;
+		}
+		main>div:nth-child(2){
+			text-align: right;
+		}
+		input{margin:.5vw 0;max-width: 40px;}
+	</style>
+	<script>
+		function calcular(){
+			//reset styles
+			document.getElementById('m1').style = 'initial';
+			document.getElementById('m2').style = 'initial';
+
+			//leer las fechas
+			var year1 = parseInt(document.getElementById('y1').value),
+				year2 = parseInt(document.getElementById('y2').value),
+				mon1 = parseInt(document.getElementById('m1').value),
+				mon2 = parseInt(document.getElementById('m2').value),
+				monex,dify;
+
+			//comprobar que todo sean numeros y los meses sean correctos
+			if(!isNaN(year1)&&!isNaN(year2)&&!isNaN(mon1)&&!isNaN(mon2)){
+				if(mon1<=0 || mon1 >= 13){
+					document.getElementById('m1').style.borderColor = '#F00';
+					alert("Mon1 incorrecto");
+					return;
+				}else if(mon2<=0 || mon2 >= 13){
+					document.getElementById('m2').style.borderColor = '#F00';
+					alert("Mon2 incorrecto");
+					return;
+				}
+			}else{
+				return;
+			}
+			monex = mon1-mon2;
+			dify =year1-year2;
+
+			monex += dify*12;
+
+			//mostrar el resultado
+			document.getElementById('resultado').innerHTML = Math.abs(monex) + " meses.";
+			
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Diferencia en meses</h1>
+	</header>
+	<main>
+		<div>Introduzca fechas:</div>
+		<div>
+			<input type="text" id="m1" placeholder="mes" />
+			<input type="text" id="y1" placeholder="año" /><br />
+			<input type="text" id="m2" placeholder="mes" />
+			<input type="text" id="y2" placeholder="año" /><br />
+			<button onclick="calcular();">Calcular</button>
+		</div>
+		<div>Diferencia:</div>
+		<div><output id="resultado"></output></div>
+	</main>
+</body>
+</html>

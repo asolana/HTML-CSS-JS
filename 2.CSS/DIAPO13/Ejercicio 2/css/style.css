@@ -1,0 +1,85 @@
+@font-face{
+	font-family: ea-first;
+	src: url(zanzinger.ttf);
+}
+*{margin: 0;padding: 0;font-family: ea-first;}
+a{text-decoration: none;}
+/*HEADER*/
+header{
+	background-image: url('../img/logo.png');
+	background-position: 90% 0;
+	background-repeat: no-repeat;
+	min-height: 100px;
+	/*Borde abajo con gradiente*/
+	border-image: linear-gradient(to left, #ed5b80 0% , #f3803e 100%);
+	border-image-slice: 1;
+	border-width: 3px;
+	border-bottom-style: solid;
+
+}
+/*NAV*/
+ul{
+	list-style-type: none; 
+	background-color: #fff;
+}
+li{
+	padding: 10px;
+	color: #000;
+}
+nav>ul>li{
+	display: inline-block;
+	position: relative;
+	text-align: right;
+	width: 10%;
+	padding: 30px 20px;
+	border-image: linear-gradient(to left, #ed5b80 0% , #f3803e 100%);
+	border-image-slice: 1;
+	border-width: 3px;
+	border-bottom-style: solid;
+}
+nav>ul>li:last-child{
+	border-right-style: solid;
+}
+nav>ul>li:hover{
+	text-shadow: 1px 1px 2px #f3803e;
+}
+nav>ul>li>ul{
+	position: absolute;
+	overflow: hidden;
+	max-height: 0;
+	width: 100%;
+	top: 85px;
+	left: 0;
+	border-image: linear-gradient(to left, #ed5b80 0% , #f3803e 100%);
+	border-image-slice: 1;
+	border-width: 3px;
+	border-bottom-style: solid;
+	transition: 1s;
+}
+nav>ul>li:hover>ul{
+	max-height: 500px;
+}
+
+/*MAIN*/
+main article{
+	padding: 10px;
+	overflow: hidden;
+	border-image: linear-gradient(to left, #ed5b80 0% , #f3803e 100%);
+	border-image-slice: 1;
+	border-width: 3px;
+	border-bottom-style: solid;
+	
+}
+figure{
+	width: 25%;
+	padding-right: 50px;
+}
+figure>img{
+	width: 100%;
+}
+main article:nth-of-type(odd)>figure{
+	float: left;
+}
+main article:nth-of-type(even)>figure{
+	float: right;
+}

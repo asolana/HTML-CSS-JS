@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Calculadora de AVG</title>
+	<style>
+		*{padding:0;margin:0;}
+		body{
+			width: 100vw;
+		}
+		header,main {
+			text-align: center;
+			width: 50%;
+			margin: auto;
+			border: 1px solid #000;
+			margin: .5vw;
+			padding: 3vw;
+		}
+		h1{font-size: 3vw;}
+		h1+span{
+			font-size: 2vw;
+			font-weight: bold;
+		}
+		main{
+			display: grid;
+			grid-template-columns: auto auto;
+			justify-content: center;
+		}
+		main>div:nth-child(2){
+			text-align: right;
+		}
+		input{margin:.5vw 0;max-width: 40px;}
+	</style>
+	<script>
+		function calcular(){
+			//leer las notas
+			var n1 = parseFloat(document.getElementById('n1').value),
+				n2 = parseFloat(document.getElementById('n2').value),
+				n3 = parseFloat(document.getElementById('n3').value),
+				prom;
+
+			//realizar el promedio
+			prom =(n1+n2+n3)/3;
+
+			//mostrar el resultado
+			if(prom>=5){
+				document.getElementById('resultado').style.color = "#0F0";
+				document.getElementById('resultado').innerHTML = "Aprobaste";
+			}else{
+				document.getElementById('resultado').style.color = "#F00";
+				document.getElementById('resultado').innerHTML = "Suspendiste";
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Calculadora de AVG</h1>
+	</header>
+	<main>
+		<div>Introduzca notas:</div>
+		<div>
+			<input type="number" id="n1" step="0.1" value="5" /><br />
+			<input type="number" id="n2" step="0.1" value="5" /><br />
+			<input type="number" id="n3" step="0.1" value="5" /><br />
+			<button onclick="calcular();">Calcular</button>
+		</div>
+		<div>Nota final:</div>
+		<div><output id="resultado"></output></div>
+	</main>
+</body>
+</html>

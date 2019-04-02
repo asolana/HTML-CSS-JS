@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<header></header>
+	<main>
+		<form>
+			<label for="email">EMAIL</label>
+			<input type="email" name="email" id="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" />
+			<hr>
+			<label for="telf">TELEFONO</label>
+			<input type="text" name="telf" id="telf" pattern="^\d{8}[A-HJ-NP-TV-Za-hj-np-tv-z]$" />
+			<hr>
+			<label for="date">FECHA</label>
+			<input type="text" name="date" id="date" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" />
+			<hr>
+			<button type="submit">Enviar</button>
+		</form>
+	</main>
+	<footer></footer>
+</body>
+</html>

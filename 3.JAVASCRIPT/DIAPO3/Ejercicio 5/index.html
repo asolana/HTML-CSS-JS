@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body{
+			width: 80%;
+			margin: auto;
+			text-align: center;
+		}
+		input[type=number]{
+			padding: .5vw;
+			border-radius: 25px;
+			text-align: center;
+			-moz-appearance: textfield;
+		}
+		button{
+			margin: 1vw;
+			padding: .5vw 2vw;
+			font-size: 1.5vw;
+			border-radius: 25px;
+		}
+		/*Para chrome*/
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+			-webkit-appearance: none; 
+			margin: 0;
+		}
+	</style>
+	<script>
+		const diff = 166.386;
+		//e =  p * 166.386
+		//p =  e / 166.386
+		function calculaP(){
+			var div = parseFloat(n1.value),
+				res = 0;
+				if(op != 'P'){
+					res = div*diff +" Pesetas";
+				}else{
+					res = div/diff +" Euros";
+				}
+			result.innerHTML = res;
+		}
+		function calculaE(){
+			var div = parseFloat(n1.value),
+				res = 0;
+				res = div/diff +" Euros";
+			result.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<label>Convertidor de divisa</label>
+	<br />
+	<input type="number" id="n1" /><br />
+	<button onclick="calculaP('P')">to Pesetas</button>
+	<button onclick="calculaE()">to Euros</button>
+	<br />
+	<span id="result"></span>	
+	<hr /> 
+</body>
+</html>

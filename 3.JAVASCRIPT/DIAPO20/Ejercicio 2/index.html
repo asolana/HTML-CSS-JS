@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<center><button onclick="this.disabled = true;dothings(this);">Do things</button></center>
+<script>
+  // var tim = setInterval(function () {
+  //   abrir();
+  // }, 15000);
+
+  function dothings(boton){
+    //Restablece el boton a los 5 seg
+    setTimeout(function () {
+      boton.disabled = false;
+    }, 5000);
+
+    //Creacion de imagen y desaparicion a los 2 seg
+    crearIMGVolatil();
+
+    //Creacion del div y desaparicion a los 2 seg
+    setTimeout(function () {
+      crearDIVVolatil();
+    }, 2000);
+
+    //Creacion del text y desaparicion al segundo
+    setTimeout(function () {
+      crearHOLAVolatil();
+    }, 4000);
+
+  }
+
+  function crearIMGVolatil(){
+    var newIMG = document.createElement('img');
+    newIMG.src = 'http://www.creacionesabm.com/img/creacionesabm.png';
+    document.body.firstElementChild.appendChild(document.createElement('br'));
+    document.body.firstElementChild.appendChild(newIMG);
+
+    setTimeout(function () {
+      document.images[0].remove();
+    }, 2000);
+  }
+
+  function crearDIVVolatil(){
+    var newDIV = document.createElement('div');
+    newDIV.style.backgroundColor = '#f00';
+    newDIV.style.width = '100px';
+    newDIV.style.height = '100px';
+    document.body.firstElementChild.appendChild(document.createElement('br'));
+    document.body.firstElementChild.appendChild(newDIV);
+
+    setTimeout(function () {
+      for(let i = 0;i < document.getElementsByTagName('div').length;i++){
+        document.getElementsByTagName('div')[i].remove();
+      }
+    }, 2000);
+  }
+
+  function crearHOLAVolatil() {
+    var hola = document.createElement('p');
+    hola.innerHTML = 'HOLA!';
+
+    document.body.firstElementChild.appendChild(hola);
+
+    setTimeout(function () {
+      for(let i = document.body.firstElementChild.children.length-1;i>0;i--){
+        document.body.firstElementChild.children[i].remove();
+      }
+    }, 1000);
+
+
+  }
+</script>
+<body>
+</body>
+</html>

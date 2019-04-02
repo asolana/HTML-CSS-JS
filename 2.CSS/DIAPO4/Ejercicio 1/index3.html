@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>COLOR3</title>
+	<script type="text/javascript">
+		function mostrar(color) {
+			document.body.style.backgroundColor = color; //cambia el color del body
+			res.style.backgroundColor = color; //cambia el color del fiv con id = 'res'
+			hex.innerHTML = color; //escribe el color en el div con id = 'hex'
+
+			var r = color.substr(1,2); //toma los dos dígitos del canal Rojo
+			var g = color.substr(3,2); //toma los dos dígitos del canal Verde
+			var b = color.substr(5,2); //toma los dos dígitos del canal Azul
+
+
+			//calcula los valores en decimal y genera el texto que se muestra en el div id='rgb'
+			rgb.innerHTML = 'rgb('+parseInt(r,16)+','+parseInt(g,16)+','+parseInt(b,16)+')';
+
+		}
+	</script>
+	<style>
+		#res{
+			height: 90px;
+			width: 90px;
+			border: solid 1px #000;
+		}
+	</style>
+</head>
+<body>
+	<input type="color" name="color" onchange="mostrar(this.value);">
+	<div id="res"></div>
+	<div id="hex">#FFFFFF</div>
+	<div id="rgb">rgb(255,255,255)</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<script>
+		var diapoJS = ['Introduccion','Javascript','Variables','Flujo','Bifurcaciones','Bucles','Funciones 1','Funciones 2','Introduccion a los objetos','Strings','Arrays indexados'];
+		document.write('<br />Array:' + diapoJS);
+		document.write('<br />Sliced:'+ diapoJS.slice(0,4));
+		document.write('<br />Sorted:'+ diapoJS.sort());
+		document.write('<br />Spliced:'+ diapoJS.splice(5,8));
+		document.write('<br />toString:'+ diapoJS.toString());
+		document.write('<br />Unshifted:'+ diapoJS.unshift('Introduccion'));
+		document.write('<br />valueOf:' + diapoJS.valueOf());
+		document.write('<br />concat:' + diapoJS.concat(['Javascript','Variables','Funciones 2']));
+		document.write('<br />indexOf:' + diapoJS.indexOf('Arrays indexados'));
+		document.write('<br />Join:' + diapoJS.join());
+		document.write('<br />lasIndexOf:' + diapoJS.lastIndexOf('Arrays indexados'));
+		document.write('<br />pop:' + diapoJS.pop());
+		document.write('<br />push:' + diapoJS.push('Variables'));
+		document.write('<br />reverse:' + diapoJS.reverse());
+		document.write('<br />shift:' + diapoJS.shift());
+	</script>
+</body>
+</html>

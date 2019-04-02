@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<meta charset="UTF-8">
+	<title>Ejercicio 8</title>
+</head>
+<body>
+	<header>
+		<h1><u>MegaCutrePaint</u></h1>
+	</header>
+	<main>
+		<section>
+			Color:<input type="color" id='col' /><button onclick="limpiar()">Limpiar</button>
+		</section>
+		<section id='paintZone'>
+			<script>
+				for (let i=1;i<=10000;i++) {
+					// document.getElementById('paintZone').innerHTML += "<div onmousedown=clicked(true) onmouseup=clicked(false) onmouseover=pintar(this,col.value)></div>";
+					document.write("<div onmousedown=clicked(true) onmouseup=clicked(false) onmouseover=pintar(this,col.value)></div>");
+				}
+		</script>
+		</section>
+	</main>
+	<script src="./js/js.js"></script>
+</body>
+</html>

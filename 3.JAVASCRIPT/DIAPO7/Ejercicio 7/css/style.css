@@ -1,0 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+h3{
+	display: inline-block;
+}
+input{
+	width: 10vw;
+}

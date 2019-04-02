@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Equaciones de 2º</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="js/js.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Equaciones de 2º</h1>
+	</header>
+	<main>
+		<section>
+
+			<h3>Equaciones de 2º</h3>
+			<input type="text" id="avar" placeholder="a" />x<sup>2</sup>+
+			<input type="text" id="bvar" placeholder="b" />x+
+			<input type="text" id="cvar" placeholder="c" />= 0
+			<button onclick="calcEquacion2();">Verificar</button>
+		</section>
+		<section>
+			<output id="res1"></output><br /> 
+			<output id="res2"></output>
+		</section>
+	</main>
+	<footer>&copy;By Me</footer>
+</body>
+</html>
+<!-- ± &plusmn; -->
+
+<!-- inicio funcionn calcEquacion2
+	leer a
+	leer b
+	leer c
+
+	si no a no es un numero y no b no es un numero y no c no es un numero
+		si a es igual a 0
+			si d es (b**2)-4*(a*c) es mas grande que 0
+				escribe formula de equacion de 2 grado
+			sino
+				no es una solucion real
+			fin si
+		sino
+			no es una equacion
+		fin si
+	sino
+		no son numeros
+	fin si
+fin funcion -->

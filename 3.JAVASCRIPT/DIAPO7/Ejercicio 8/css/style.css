@@ -1,0 +1,21 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+#paintZone{
+	line-height: 0;
+	width: 500px;
+	border: 1px solid #000;
+	margin: auto;
+}
+div{
+	height: 5px;
+	width: 5px;
+	border: 0px solid #000;
+	display: inline-block;
+}

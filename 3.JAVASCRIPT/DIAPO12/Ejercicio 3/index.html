@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+<body>
+	Array para probar <input type="text" value="q,w,e,a,s,d,z,x,s,c,v" disabled />
+	<hr/>
+	<button onclick="document.getElementsByTagName('output')[0].value=indiceDe('s',tryarr)">indiceDe</button><output></output>
+	<hr/>
+	<button onclick="document.getElementsByTagName('output')[1].value=ultimoIndiceDe('s',tryarr)">ultimoIndiceDe</button><output></output>
+	<hr/>
+	<button onclick="document.getElementsByTagName('output')[2].value=concatenar(tryarr,[0,9,8,7,6,5,4,3,2,1])">concatenar</button><output></output>
+	<hr/>
+	<button onclick="document.getElementsByTagName('output')[3].value=invertir(tryarr)">invertir</button><output></output>
+	<script>
+		var tryarr = ['q','w','e','a','s','d','z','x','s','c','v'];
+		function indiceDe (item,arr) {
+			for (i in arr) {
+				if(arr[i] == item) return i;
+			}
+			return -1;
+		}
+		function ultimoIndiceDe (item,arr) {
+			var pos = -1;
+			for (i in arr) {
+				if(arr[i] == item) pos = i;
+			}
+			return pos;
+		}
+		function concatenar (arr,arr2) {
+			var temp = [];
+			for (i in arguments) {
+				for (o of arguments[i]) {
+					temp.push(o);
+				}
+			}
+			return temp;
+		}
+		function invertir (arr) {
+			var temp = []
+			for(let i = arr.length-1; i >= 0; i--){
+				temp.push(arr[i]);
+			}
+			return temp;
+		}
+	</script>
+</body>
+</html>
